@@ -103,9 +103,11 @@
   </div>
 
   <script>
-    // Automatically update the year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+</script>
 
 </body>
 </html>
