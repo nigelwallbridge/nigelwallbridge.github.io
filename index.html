@@ -4,44 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nigel Wallbridge</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    nav {
+      margin-bottom: 40px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    a {
+      color: #0066cc;
+    }
+  </style>
 </head>
-<body style="margin:0; font-family: Arial, sans-serif; background:#f7f7f7; color:#222;">
 
-  <div style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+<body>
 
-    <nav style="margin-bottom: 40px;">
-      <a href="index.html" style="margin-right: 20px; text-decoration: none; color: #222; font-weight: bold;">Home</a>
-      <a href="code.html" style="text-decoration: none; color: #222; font-weight: bold;">Code</a>
+  <div class="container">
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="code.html">Code</a>
     </nav>
 
-    <section style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08);">
-      <h1 style="margin-top: 0; font-size: 2.5rem;">Nigel Wallbridge</h1>
-      <p style="font-size: 1.2rem; color: #555;">
-        A simple personal website built with GitHub Pages.
-      </p>
+    <div class="card">
+      <h1>Nigel Wallbridge</h1>
 
-      <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+      <p class="subtitle">
+        Based in Zurich • Business • Technology • Learning
+      </p>
 
       <h2>About</h2>
       <p>
-        Welcome to my website. I am learning GitHub and basic web development by building this site step by step.
+        Welcome to my personal website. I am learning GitHub and web development by building this site step by step.
       </p>
 
-      <h2>Interests</h2>
+      <h2>Focus</h2>
       <p>
-        Business, technology, learning, and practical projects.
+        I’m interested in practical projects, business ideas, and understanding how things work.
       </p>
 
       <h2>Links</h2>
       <ul>
-        <li><a href="https://github.com/nigelwallbridge">My GitHub profile</a></li>
+        <li><a href="https://github.com/nigelwallbridge">GitHub profile</a></li>
         <li><a href="code.html">My code page</a></li>
       </ul>
-    </section>
+
+      <footer>
+        © <span id="year"></span> Nigel Wallbridge
+      </footer>
+    </div>
 
   </div>
-</body>
-</html>
-  </div>
+
+  <script>
+    // Automatically update the year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
