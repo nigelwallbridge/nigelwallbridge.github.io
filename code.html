@@ -1,136 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="code.html">Code</a>
+</nav>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logistic Map — Population Over Time</title>
-
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #e9eef3;
-      color: #222;
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    nav {
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #1a1a1a;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .card {
-      background: white;
-      border: 2px solid #b8c4d0;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-    }
-
-    h1 { margin-top: 0; font-size: 24px; }
-
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    h1 { margin: 0 0 10px; font-size: 24px; }
+    p { margin: 6px 0 14px; }
     .controls {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
       margin-bottom: 14px;
-      background: #f8f8f8;
+      background: white;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 12px;
     }
-
     label { display: block; font-weight: 600; margin-bottom: 6px; }
-
     input[type="range"], input[type="number"] { width: 100%; }
-
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 88px;
-      gap: 8px;
-      align-items: center;
-    }
-
-    #calculator {
-      width: 100%;
-      height: 70vh;
-      min-height: 560px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: white;
-    }
-
+    .row { display: grid; grid-template-columns: 1fr 88px; gap: 8px; align-items: center; }
+    #calculator { width: 100%; height: 70vh; min-height: 560px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: white; }
     .small { color: #555; font-size: 14px; }
-
     .footer { margin-top: 10px; color: #555; font-size: 14px; }
-
     code { background: #f0f0f0; padding: 2px 5px; border-radius: 4px; }
   </style>
-
   <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 </head>
-
 <body>
   <div class="wrap">
+    <h1>Population evolution over time (logistic map)</h1>
+    <p class="small">This plots the discrete logistic map <code>P_{n+1}=rP_n(1-P_n)</code> as population versus time step <code>n</code>, with no cobweb diagram.</p>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="code.html">Code</a>
-    </nav>
-
-    <div class="card">
-      <h1>Population evolution over time (logistic map)</h1>
-
-      <p class="small">
-        This plots the discrete logistic map <code>Pₙ₊₁ = rPₙ(1 - Pₙ)</code>
-      </p>
-
-      <div class="controls">
-        <div>
-          <label>Growth parameter r</label>
-          <div class="row">
-            <input id="rRange" type="range" min="0" max="4" step="0.001" value="3.2" />
-            <input id="rNum" type="number" min="0" max="4" step="0.001" value="3.2" />
-          </div>
-        </div>
-
-        <div>
-          <label>Initial population P₀</label>
-          <div class="row">
-            <input id="p0Range" type="range" min="0" max="1" step="0.001" value="0.2" />
-            <input id="p0Num" type="number" min="0" max="1" step="0.001" value="0.2" />
-          </div>
-        </div>
-
-        <div>
-          <label>Iterations</label>
-          <div class="row">
-            <input id="nRange" type="range" min="5" max="300" value="80" />
-            <input id="nNum" type="number" min="5" max="300" value="80" />
-          </div>
+    <div class="controls">
+      <div>
+        <label for="rRange">Growth parameter r</label>
+        <div class="row">
+          <input id="rRange" type="range" min="0" max="4" step="0.001" value="3.2" />
+          <input id="rNum" type="number" min="0" max="4" step="0.001" value="3.2" />
         </div>
       </div>
-
-      <div id="calculator"></div>
+      <div>
+        <label for="p0Range">Initial population P₀</label>
+        <div class="row">
+          <input id="p0Range" type="range" min="0" max="1" step="0.001" value="0.2" />
+          <input id="p0Num" type="number" min="0" max="1" step="0.001" value="0.2" />
+        </div>
+      </div>
+      <div>
+        <label for="nRange">Number of iterations</label>
+        <div class="row">
+          <input id="nRange" type="range" min="5" max="300" step="1" value="80" />
+          <input id="nNum" type="number" min="5" max="300" step="1" value="80" />
+        </div>
+      </div>
     </div>
 
+    <div id="calculator"></div>
+    <div class="footer">Tip: you can still edit expressions directly inside the embedded Desmos calculator if you want.</div>
   </div>
 
   <script>
     const elt = document.getElementById('calculator');
-    const calculator = Desmos.GraphingCalculator(elt);
+    const calculator = Desmos.GraphingCalculator(elt, {
+      expressions: true,
+      settingsMenu: true,
+      zoomButtons: true,
+      keypad: true,
+      expressionsTopbar: true,
+      pointsOfInterest: false,
+      trace: true,
+      invertedColors: false
+    });
 
     const controls = {
       rRange: document.getElementById('rRange'),
@@ -141,41 +88,79 @@
       nNum: document.getElementById('nNum')
     };
 
-    function sync(a, b) {
-      a.oninput = () => { b.value = a.value; update(); };
-      b.oninput = () => { a.value = b.value; update(); };
+    function syncPair(a, b) {
+      const forward = () => { b.value = a.value; updateGraph(); };
+      const backward = () => { a.value = b.value; updateGraph(); };
+      a.addEventListener('input', forward);
+      b.addEventListener('input', backward);
     }
 
-    sync(controls.rRange, controls.rNum);
-    sync(controls.p0Range, controls.p0Num);
-    sync(controls.nRange, controls.nNum);
+    syncPair(controls.rRange, controls.rNum);
+    syncPair(controls.p0Range, controls.p0Num);
+    syncPair(controls.nRange, controls.nNum);
 
-    function update() {
-      const r = parseFloat(controls.rNum.value);
-      const p0 = parseFloat(controls.p0Num.value);
-      const steps = parseInt(controls.nNum.value);
-
+    function logisticSeries(r, p0, steps) {
+      const xs = [];
+      const ys = [];
       let p = p0;
-      let xs = [], ys = [];
-
-      for (let i = 0; i <= steps; i++) {
-        xs.push(i);
-        ys.push(p);
+      for (let n = 0; n <= steps; n++) {
+        xs.push(String(n));
+        ys.push(String(Number(p.toFixed(8))));
         p = r * p * (1 - p);
       }
+      return { xs, ys };
+    }
+
+    function updateGraph() {
+      const r = Math.max(0, Math.min(4, parseFloat(controls.rNum.value)));
+      const p0 = Math.max(0, Math.min(1, parseFloat(controls.p0Num.value)));
+      const steps = Math.max(5, Math.min(300, parseInt(controls.nNum.value, 10)));
+
+      controls.rRange.value = controls.rNum.value = r;
+      controls.p0Range.value = controls.p0Num.value = p0;
+      controls.nRange.value = controls.nNum.value = steps;
+
+      const { xs, ys } = logisticSeries(r, p0, steps);
 
       calculator.setBlank();
+      calculator.setMathBounds({
+        left: -1,
+        right: steps + 1,
+        bottom: -0.05,
+        top: 1.05
+      });
+
       calculator.setExpression({
-        id: 'table',
+        id: 'title',
+        type: 'text',
+        text: 'Population over time for the logistic map'
+      });
+
+      calculator.setExpression({ id: 'rdef', latex: `r=${r}` });
+      calculator.setExpression({ id: 'p0def', latex: `P_0=${p0}` });
+      calculator.setExpression({ id: 'rule', latex: 'P_{n+1}=rP_n(1-P_n)' });
+
+      calculator.setExpression({
+        id: 'table1',
         type: 'table',
         columns: [
-          { latex: 'n', values: xs },
-          { latex: 'P_n', values: ys, points: true, lines: true }
+          {
+            id: 'col1',
+            latex: 'n',
+            values: xs
+          },
+          {
+            id: 'col2',
+            latex: 'P_n',
+            values: ys,
+            points: true,
+            lines: true
+          }
         ]
       });
     }
 
-    update();
+    updateGraph();
   </script>
 </body>
 </html>
