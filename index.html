@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f5f5f5;
+      background: #e9eef3;
       color: #222;
     }
 
@@ -20,7 +20,7 @@
     }
 
     nav {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     nav a {
@@ -31,15 +31,17 @@
     }
 
     .card {
-      background: white;
+      background: #ffffff;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      border: 1px solid #d0d7de;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
 
     h1 {
       font-size: 2.5rem;
       margin-top: 0;
+      margin-bottom: 10px;
     }
 
     h2 {
@@ -49,12 +51,15 @@
     .subtitle {
       color: #666;
       font-size: 1.1rem;
+      margin-bottom: 24px;
     }
 
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
       color: #777;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 20px;
     }
 
     a {
@@ -64,9 +69,7 @@
 </head>
 
 <body>
-
   <div class="container">
-
     <nav>
       <a href="index.html">Home</a>
       <a href="code.html">Code</a>
@@ -99,15 +102,13 @@
         © <span id="year"></span> Nigel Wallbridge
       </footer>
     </div>
-
   </div>
 
   <script>
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-</script>
-
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>
