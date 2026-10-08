@@ -18,6 +18,16 @@ function analyse(d){
  else{verdict='Clarify the uncertainty first';reason='The preferred choice changes within your belief range. Evidence about the favourable circumstance could change the decision.';}
  return {p,lo,hi,go:go(p),stay:stay(p),goRange:[go(lo),go(hi)].sort((a,b)=>a-b),stayRange:[stay(lo),stay(hi)].sort((a,b)=>a-b),diff:diff(p),threshold,slope,rg,rs,verdict,reason,min,max};
 }
-root.SIGFI={analyse};
-if(typeof module!=='undefined')module.exports={analyse};
+function quick(d){
+ const r=analyse(d);
+ const goForIt=!r.rg.blocked&&(r.rs.blocked||r.diff>1e-8);
+ let reason;
+ if(r.rg.blocked)reason='The downside is more than you can live with.';
+ else if(r.rs.blocked)reason='Staying put crosses your risk limits. Going for it doesn’t.';
+ else if(Math.abs(r.diff)<=1e-8)reason='There’s no advantage in going for it.';
+ else reason=goForIt?'The upside wins, and the downside is within your limit.':'The other choice comes out better.';
+ return {...r,goForIt,reason};
+}
+root.SIGFI={analyse,quick};
+if(typeof module!=='undefined')module.exports={analyse,quick};
 })(typeof globalThis!=='undefined'?globalThis:this);
