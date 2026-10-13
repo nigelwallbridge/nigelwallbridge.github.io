@@ -49,7 +49,24 @@ function resourceThresholds(d){
  const [a,b,c,e]=[A,B,C,D].map(x=>x/scale);
  const floor=Math.max(0,-Math.min(...active))/scale;
  const start=floor+Math.max(1,floor)*1e-12,end=1e12;
- const f=x=>(p===0?0:p*Math.log1p((a-c)/(x+c)))+(p===1?0:(1-p)*Math.log1p((b-e)/(x+e)));
+ const q=(100-d.p)/100;
+ // Equal means and a wider two-point distribution imply strictly lower log
+ // utility at every finite admissible N (a mean-preserving spread).
+ const meanDifference=d.p*(A-C)+(100-d.p)*(B-D);
+ const goWider=Math.min(A,B)<=Math.min(C,D)&&Math.max(A,B)>=Math.max(C,D);
+ const stayWider=Math.min(C,D)<=Math.min(A,B)&&Math.max(C,D)>=Math.max(A,B);
+ if(p>0&&p<1&&meanDifference===0&&(goWider||stayWider)&&Math.max(A,B)!==Math.min(A,B)&&!(A===C&&B===D)&&!(p===.5&&A===D&&B===C))return {roots:[],equalEverywhere:false,lower:floor*scale,upper:end*scale,noFiniteCrossing:true,preferred:goWider?'Cautious':'Go',reason:'Both choices have the same expected payoff. The more spread-out outcomes have lower expected logarithmic utility at every finite admissible N. Equality is approached only as N tends to infinity.'};
+ const f=x=>{
+  if(x<=32)return (p===0?0:p*Math.log1p((a-c)/(x+c)))+(p===1?0:q*Math.log1p((b-e)/(x+e)));
+  // Expand the difference directly; subtracting near-equal logs loses precision.
+  let sum=0,power=1;
+  for(let n=1;n<=24;n++){
+   power/=x;
+   const coefficient=n===1?meanDifference/(100*scale):p*(a**n-c**n)+q*(b**n-e**n);
+   sum+=(n%2?1:-1)*coefficient*power/n;
+  }
+  return sum;
+ };
  const k=p*(c-a),l=(1-p)*(e-b);
  const qa=k+l,qb=k*(b+e)+l*(a+c),qc=k*b*e+l*a*c;
  if((p===0||A===C)&&(p===1||B===D)||qa===0&&qb===0&&qc===0)return {roots:[],equalEverywhere:true,lower:floor*scale,upper:end*scale};
