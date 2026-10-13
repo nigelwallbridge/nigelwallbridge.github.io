@@ -2,7 +2,7 @@
 function analyse(d){
  const p=d.p/100,lo=d.uncertain?d.low/100:p,hi=d.uncertain?d.high/100:p;
  const {A,B,C,D}=d.pay;
- const money=d.kind==='money',N=d.resources;
+ const money=true,N=d.resources; // Both routes use positive starting resources and logarithmic utility.
  if(!Number.isFinite(d.p)||d.p<0||d.p>100)throw new RangeError('Probability must be a percentage from 0 to 100.');
  if(![A,B,C,D].every(Number.isFinite))throw new RangeError('Payoffs must be finite.');
  if(money&&(!Number.isFinite(N)||N<=0))throw new RangeError('Current resources N must be positive.');
@@ -36,13 +36,13 @@ function quick(d){
  else if(r.rs.blocked)reason='Staying put crosses your risk limits. Going for it doesn’t.';
  else if(Math.abs(r.diff)<=1e-8)reason='There’s no advantage in going for it.';
  else reason=goForIt?'The upside wins, and the downside is within your limit.':'The other choice comes out better.';
- return {...r,goForIt,reason:d.kind==='money'?r.reason:reason};
+ return {...r,goForIt,reason:r.reason};
 }
 // Diagnostic only: hold probability/payoffs fixed and solve EU_Go(N)=EU_Cautious(N).
 // Split at every stationary point, so a non-monotone difference can have two roots.
 function resourceThresholds(d){
  analyse(d); // Use the same input validation as the decision engine.
- if(d.kind!=='money')return null;
+
  const p=d.p/100,{A,B,C,D}=d.pay;
  const active=p===0?[B,D]:p===1?[A,C]:[A,B,C,D];
  const scale=Math.max(1,...active.map(Math.abs));
