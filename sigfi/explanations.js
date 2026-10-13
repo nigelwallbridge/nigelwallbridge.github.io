@@ -1,6 +1,7 @@
 (function(root){
 function explain(d){
  const r=root.SIGFI.quick(d),{A,B,C,D}=d.pay,tol=1e-8;
+ if(d.kind==='money')return {title:r.verdict,text:r.reason,change:'Compare again if resources, payoffs or probabilities change.',go:r.go,stay:r.stay,goLoss:r.rg.loss,stayLoss:r.rs.loss,near:false,threshold:r.threshold};
  const pct=n=>new Intl.NumberFormat('en-GB',{maximumSignificantDigits:6}).format(n*100)+'%';
  const amount=n=>d.kind==='money'?new Intl.NumberFormat('en-GB',{style:'currency',currency:d.currency||'GBP',maximumFractionDigits:2}).format(n):new Intl.NumberFormat('en-GB',{maximumFractionDigits:2}).format(n)+' happiness points';
  const limit=Math.min(d.limit,d.kind==='money'?d.capacity:d.limit);
