@@ -78,7 +78,10 @@ function resourceThresholds(d){
  const add=x=>{const N=x*scale;if(!roots.some(r=>Math.abs(r.N-N)<1e-7*Math.max(1,N)))roots.push({N,utility:(p===0?0:p*Math.log(N+A))+(p===1?0:(1-p)*Math.log(N+B))});};
  for(let i=0;i<points.length-1;i++){
   let lo=points[i],hi=points[i+1],fl=f(lo),fh=f(hi);
-  if(i>0&&Math.abs(fl)<1e-14)add(lo);
+  // Compare rounding error with the local term magnitudes, not a fixed
+  // absolute utility tolerance: utilities converge at large resources.
+  const localError=32*Number.EPSILON*(Math.abs(k)+Math.abs(l))/lo;
+  if(i>0&&Math.abs(fl)<=localError)add(lo);
   if(fl===0||fh===0||Math.sign(fl)===Math.sign(fh))continue;
   for(let j=0;j<120;j++){const m=(lo+hi)/2,fm=f(m);if(fm===0){lo=hi=m;break;}if(Math.sign(fm)===Math.sign(fl)){lo=m;fl=fm;}else hi=m;}
   add((lo+hi)/2);
