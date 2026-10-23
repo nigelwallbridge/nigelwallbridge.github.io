@@ -1,0 +1,29 @@
+name: Decider development checks
+on:
+  push:
+    branches: [decider-development]
+    paths: ['development/decider/**', '.github/workflows/decider-development.yml']
+  pull_request:
+    paths: ['development/decider/**', '.github/workflows/decider-development.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: development/decider
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: decider-development-preview
+          path: development/decider/dist/
+          include-hidden-files: true
+          retention-days: 14
