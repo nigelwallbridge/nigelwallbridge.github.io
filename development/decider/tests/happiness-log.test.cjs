@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');const {analyse,quick,resourceThresholds}=require('../src/engine.js');
+const d={kind:'happiness',resources:5,p:60,pay:{A:6,B:-4,C:-1,D:2},ruinGo:false,ruinStay:false};
+assert.ok(Math.abs(analyse(d).go-(.6*Math.log(11)+.4*Math.log(1)))<1e-12);
+assert.equal(quick(d).goForIt,false);assert.equal(quick({...d,resources:10}).goForIt,true);
+assert.ok(Math.abs(resourceThresholds(d).roots[0].N-6.44203723713669)<1e-8);
+assert.equal(analyse({...d,resources:4}).go,-Infinity);
+assert.equal(quick({...d,resources:1,pay:{A:-1,B:-1,C:-1,D:-1}}).goForIt,false);
+assert.equal(analyse({...d,resources:4,p:100}).go,Math.log(10));
+assert.equal(quick({...d,resources:10,ruinGo:true}).goForIt,false);
+assert.throws(()=>analyse({...d,resources:0}),RangeError);
+assert.equal(analyse({...d,resources:10,limit:0}).go,analyse({...d,resources:10,limit:50}).go);
+assert.equal(analyse({...d,kind:'money'}).go,analyse(d).go);
+console.log('11 Happiness logarithmic-utility checks passed.');
