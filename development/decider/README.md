@@ -26,9 +26,15 @@ The workflow runs for changes on `decider-development` and relevant pull request
 
 Review source changes in pull requests. Do not merge automatically. No Pages publishing action or publishing credentials are included. Keep the existing Pages configuration on `main`.
 
-## What this first step does not change
+## Development numerics 1
 
-The calculation engine is copied unchanged. Adaptive precision, systematically verified crossings, stable decision differences, and consistent numerical tolerance across recommendations and diagnostics remain the next mathematical-engine work. Passing these tests is not proof of accuracy for every possible input.
+The engine now calculates log utility differences directly with log1p. Near cancellation, near terminal-resource boundaries, or at very large resources it switches to an 80-decimal BigInt fixed-point logarithm. Input numbers are interpreted using their JavaScript decimal representations. Precision already lost in input parsing cannot be recovered. No third-party numerical library or network service is used.
+
+Recommendations and resource-threshold searches share the comparator. The old fixed 1e-8 decision cutoff has been removed. An unresolved comparison is explicitly reported as unresolved, with a red headline; it is not called a tie. Exact equalities handled structurally remain ties. Displayed full utility totals can round to the same number even when the direct difference is resolved.
+
+Reported crossing candidates are checked on both sides and include bracket and verification metadata. Tests cover genuine two-crossing behaviour as well as the false second lottery crossing. The high-precision series uses 80 fixed decimal places and a conservative 1e-72 uncertainty guard; this is a numerical safeguard, not formal interval certification. The derivative-polynomial partition still uses ordinary floating point. Tangencies, extremely close crossings, and crossings inside the initial boundary offset are not exhaustively certified. Searches remain bounded at one trillion times the payoff scale. Absence of a found crossing must not be interpreted as universal proof that none exists.
+
+The suite includes 73 reference cases generated independently using Python Decimal with 115-digit precision. Run `python scripts/generate-reference.py` to reproduce them. Normal checks require only Node. Passing these cases is not proof of accuracy for every possible input. Further work should strengthen derivative partitioning and rigorous error bounds.
 
 Wording is still inside app.js; extracting it into a content module is the next interface refactor. Historical tests for the superseded linear Happiness model were not carried over as current acceptance tests.
 
