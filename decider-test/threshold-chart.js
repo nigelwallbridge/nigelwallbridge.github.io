@@ -22,7 +22,7 @@ function thresholdChart(d){
  const path=key=>{let open=false;return samples.map(a=>{if(!Number.isFinite(a[key])){open=false;return '';}const cmd=open?'L':'M';open=true;return cmd+x(a.n).toFixed(2)+','+y(a[key]).toFixed(2);}).join(' ');};
  const fmt=n=>isCash?new Intl.NumberFormat('en-GB',{style:'currency',currency:d.currency||'GBP',maximumSignificantDigits:5}).format(n):new Intl.NumberFormat('en-GB',{maximumSignificantDigits:5}).format(n)+' reserve points';
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const label=isCash?'Current resources (N)':'Emotional reserve (H)';
+ const label=isCash?'Your current resources':'Your emotional strength';
  const markers=roots.map(n=>`<line x1="${x(n)}" x2="${x(n)}" y1="32" y2="200" stroke="#d0ff72" stroke-dasharray="4 4"/>`).join('');
  const dots=[['go','#d0ff72'],['stay','#ffac8b']].filter(([k])=>Number.isFinite(r[k])).map(([k,c])=>`<circle cx="${x(current)}" cy="${y(r[k])}" r="4" fill="${c}"/>`).join('');
  const status=roots.length?'Threshold'+(roots.length>1?'s':'')+': '+roots.map(fmt).join(', ')+'.':root.SIGFI.noThresholdCopy(d,t).summary;

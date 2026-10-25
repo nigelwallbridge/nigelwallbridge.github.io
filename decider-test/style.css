@@ -40,3 +40,16 @@
 .alternative-heading{font-size:19px;font-weight:700;margin:30px 0 12px;color:#ecf2ed}.alternative-heading+.mode-control{margin-top:0}
 .development-banner{margin:0 auto 18px;max-width:500px;padding:12px 24px;background:#3b321e;color:#ffe2a2;font-size:13px}
 @media(max-width:360px){.launch-ribbon{width:100%;margin-left:0;margin-right:0}.launch-ribbon>strong{font-size:14px}}
+
+/* Version 1.17: corner launch ribbon and clearer resource guidance. */
+body{position:relative;overflow-x:clip}
+.launch-ribbon{position:absolute;z-index:5;top:43px;right:-62px;width:310px;margin:0;padding:10px 0;background:#f00;border:0;border-radius:0;transform:rotate(39deg);box-shadow:none;pointer-events:none}
+.launch-ribbon>span{font-family:inherit;font-size:23px;font-style:italic;font-weight:800;line-height:1.15}
+.launch-ribbon>strong{font-size:16px;font-style:italic;font-weight:750;line-height:1.4}
+body:has(.launch-ribbon) header{padding-right:175px}
+body:has(.launch-ribbon) .brand-title{margin-top:65px}
+body:has(.launch-ribbon) .development-banner{margin-right:170px;font-size:10px;padding:8px;min-height:42px}
+.resource-help{font-size:14px;color:var(--muted);margin:0 0 16px}
+@media(max-width:360px){.launch-ribbon{width:285px;right:-65px;top:40px;margin:0}.launch-ribbon>strong{font-size:14px}}
+html{overflow-x:hidden}
+body:has(.launch-ribbon) header{flex-direction:column;align-items:flex-start;gap:8px}body:has(.launch-ribbon) header a{font-size:20px;white-space:nowrap}
