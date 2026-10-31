@@ -1,11 +1,17 @@
-# Welcome and examples - development/test release
+# The Decider 1.18
 
-Version 1.17. Personal decisions retain the dark green/lime design; examples use cream reading surfaces and blue actions. Explicit example labels continue through the calculator, result and Explore.
+Public promotion of the tested welcome and example experience.
 
-25 examples: four public decisions, five business, six other money, ten happiness. The mixed selection includes one of each category. Topic selectors sit below the cards on welcome and library pages. Every card and example leads with The Decider's AI-free decision. Short explanations are lighter and more conversational; detailed inputs remain expandable. Public examples retain their decision-maker perspective and the full assumptions and sources in the detail panel.
+- Original brand promise and distinct personal/example journeys.
+- 25 examples with The Decider's AI-free decision, concise explanations and editable assumptions.
+- Topic selectors below the example cards; phone extended-warranty example.
+- Installation and offline calculations, with a deliberate update-and-restart flow.
+- Content-hashed JavaScript and CSS assets to avoid mixing releases.
 
-New phone extended-warranty example: GBP180 premium, GBP50 claim fee, GBP900 uncovered repair/replacement, GBP1,500 starting resources and a 10% whole-period chance of an eligible fault. The decision is No. Increasing that chance to 30% produces Yes. Figures and coverage are example terms, not a named policy.
+Public app: /sigfi/. The repository home forwards there. Test preview: /decider-test/.
 
-Verification: all calculation and precision suites; 25 results and 25 variations against independent 110-digit arithmetic; 500 balanced selections; filters; all 25 editable examples and Explore; warranty switching result; offline use; contact return; 320/390/1024px layouts. The mathematics, tracking and contact configuration are unchanged.
+Builds: npm run build produces the labelled development preview in dist/. npm run build:public produces the public app in dist-public/, with public app name and no development banner. Both builds use the same source and mathematical engine. Version 1.18 is shown in the footer.
 
-Source: development/decider/src on decider-development. Built test preview: /decider-test/. Public /sigfi/ remains unchanged.
+Calculation, precision, threshold and example checks pass. Browser checks cover all 25 examples, both tracks, results and Explore, offline operation, contact navigation, topic selection, and mobile/desktop layouts. No live forms are submitted during verification.
+
+Rollback: retain the previous main commit and the /sigfi/ tree recorded in the local deployment record. Do not merge the whole development branch over main.

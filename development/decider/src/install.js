@@ -14,7 +14,7 @@
   if(button)button.disabled=navigator.onLine===false;
  }
  function refresh(){
-  status.textContent=!supported?'Installable preview: open this app over HTTPS or on localhost.':navigator.onLine===false?(ready?'Offline · decisions and Explore are available.':'Offline · open online once to prepare this app.'):ready?'Ready to use offline':'Preparing offline access…';
+  status.textContent=!supported?'To install, open The Decider over HTTPS or on localhost.':navigator.onLine===false?(ready?'Offline · decisions and Explore are available.':'Offline · open online once to prepare this app.'):ready?'Ready to use offline':'Preparing offline access…';
   install.hidden=!supported||standalone();refreshContactState();
  }
  function offerUpdate(){if(registration?.waiting)update.hidden=false;}
