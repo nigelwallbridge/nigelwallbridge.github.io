@@ -1,4 +1,4 @@
-const CACHE_NAME="27c55094791b";
+const CACHE_NAME="551e9596d127";
 const FILES=["index.html","app.a3c1579e620a.js","engine.635347268be6.js","examples.5b7491707d25.js","explanations.782e2d12123a.js","icon-192.png","icon-512.png","icon-maskable.png","install.9c0275db6e06.js","manifest.webmanifest","precision.da96ebac7d60.js","services.969107269f68.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.3d760676ad13.js","welcome.fec025a4d564.css","welcome.49accf7f6ac5.js"];
 const BASE=new URL('./',self.location.href);
 const PREFIX='decider:'+BASE.href+':';
