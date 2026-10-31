@@ -1,9 +1,9 @@
 const assert=require('node:assert/strict');
 const {items,stateFor,choose}=require('../src/examples.js');
 const maths=require('../src/engine.js');
-assert.equal(items.length,24);
-assert.equal(new Set(items.map(e=>e.id)).size,24);
-for(const [category,n] of [['public',4],['business',5],['money',5],['happiness',10]])assert.equal(items.filter(e=>e.category===category).length,n);
+assert.equal(items.length,25);
+assert.equal(new Set(items.map(e=>e.id)).size,25);
+for(const [category,n] of [['public',4],['business',5],['money',6],['happiness',10]])assert.equal(items.filter(e=>e.category===category).length,n);
 for(const e of items){
  assert.ok(e.question&&e.why&&e.lesson&&e.change);
  assert.equal(e.situations.length,2);assert.deepEqual(Object.keys(e.notes),['A','B','C','D']);
@@ -32,6 +32,6 @@ for(let i=0;i<500;i++){
  assert.ok(ids.every(id=>!previous.includes(id)),'avoid repeating the last welcome selection');
  ids.forEach(id=>seen.add(id));previous=ids;
 }
-assert.equal(seen.size,24);
+assert.equal(seen.size,25);
 for(const category of ['public','business','money','happiness']){for(let i=0;i<50;i++){const draw=choose([],random,category);assert.equal(draw.length,4);assert.ok(draw.every(e=>e.category===category));assert.equal(new Set(draw.map(e=>e.id)).size,4);}}
-console.log('24 results and 24 variations; 500 balanced mixed draws; all category filters verified.');
+console.log('25 results and 25 variations; 500 balanced mixed draws; all category filters verified.');

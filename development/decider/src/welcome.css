@@ -13,3 +13,5 @@
 @media(max-width:360px){.welcome-examples{padding:21px 15px}.example-card>strong{font-size:22px}.compact-example{padding:22px 16px}.compact-example .example-title{font-size:32px}}
 
 .example-card.happiness>span.card-assumptions.card-assumptions{color:#546761}
+
+.example-card.money>span.card-answer,.example-card.happiness>span.card-answer{font-size:13px;line-height:1.5;font-weight:600;max-width:230px}.example-card .card-answer b{display:block;font-size:29px;margin-top:2px}.welcome-examples>.example-filter,#app:has(.example-library-group)>.example-filter{border-top:1px solid #c9d0c5;padding-top:17px;margin-top:25px;font-size:12px;font-weight:500}.welcome-examples>.example-filter select{min-height:43px;font-size:14px;padding:9px 12px}.compact-example .example-verdict>span{font-size:14px}.compact-example .example-verdict h2{margin-bottom:0}

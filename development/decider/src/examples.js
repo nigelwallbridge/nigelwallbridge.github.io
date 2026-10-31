@@ -38,7 +38,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The potential profit justifies the possible loss for a business with this financial cushion.",
+    "shortWhy": "Spend money to make money? Here, the numbers back it. The Decider gives this campaign the green light.",
     "shortChange": "Lower confidence in demand from 50% to 30%, and the answer becomes No.",
     "perspective": "Business owner"
   },
@@ -79,7 +79,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "Hiring offers more growth, but the wage commitment needs a financial cushion. Here, that cushion is sufficient.",
+    "shortWhy": "Time to stop doing everything yourself? With this cash cushion, The Decider says the extra earning potential is worth the commitment.",
     "shortChange": "Reduce starting resources from £40,000 to £15,000, and the answer becomes No.",
     "perspective": "Business owner"
   },
@@ -120,7 +120,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible gain outweighs the launch risk at these odds and with these resources.",
+    "shortWhy": "The launch could flop. But the upside, odds and cash cushion give it enough going for it. The Decider says launch.",
     "shortChange": "Reduce the chance of strong demand from 40% to 25%, and the answer becomes No.",
     "perspective": "Business owner"
   },
@@ -163,7 +163,7 @@ const items=[
     "expected": false,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "One bad order could consume too much of the business’s available money.",
+    "shortWhy": "A big order can be a big headache. One bad outcome eats too much of the business’s money. The Decider says pass.",
     "shortChange": "Reduce the possible loss from £18,000 to £8,000 through credible payment protection, and the answer becomes Yes.",
     "perspective": "Business owner"
   },
@@ -207,7 +207,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The equipment offers enough benefit compared with keeping the existing setup.",
+    "shortWhy": "Shiny new kit needs to earn its keep. On these figures, it does. The Decider says invest.",
     "shortChange": "Add £5,000 to the purchase cost in both outcomes, and the answer becomes No.",
     "perspective": "Business owner"
   },
@@ -248,7 +248,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The potential earnings justify the course cost for someone with this financial cushion.",
+    "shortWhy": "A course is an expense now and a possible boost later. With this financial cushion, The Decider backs the investment.",
     "shortChange": "Reduce available resources from £6,000 to £1,500, and the answer becomes No.",
     "perspective": "Personal money choice"
   },
@@ -292,7 +292,7 @@ const items=[
     "expected": false,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The tiny chance of a large prize does not justify the ticket cost on money alone. These are example odds.",
+    "shortWhy": "A massive jackpot. A microscopic chance. On money alone, The Decider says keep the ticket money.",
     "shortChange": "Value the enjoyment of playing at £3 and include it once in both buying outcomes: the broader-value answer becomes Yes. The financial answer stays No.",
     "perspective": "Personal money choice"
   },
@@ -335,7 +335,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "Replacing the car offers better protection against the possible cost of keeping it.",
+    "shortWhy": "Another repair bill—or a fresh start? Here, keeping the old car carries the nastier surprise. The Decider says replace it.",
     "shortChange": "If an inspection reduces the bad repair outcome to a £2,500 cost, keeping the car becomes preferable.",
     "perspective": "Personal money choice"
   },
@@ -376,7 +376,7 @@ const items=[
     "expected": false,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible bonus does not sufficiently compensate for the loss of dependable income.",
+    "shortWhy": "That bonus looks tempting. The less exciting guaranteed income wins this round. The Decider says stick with it.",
     "shortChange": "Raise confidence in earning the bonus from 65% to 75%, and the answer becomes Yes.",
     "perspective": "Personal money choice"
   },
@@ -417,7 +417,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The extra premium is worthwhile protection against losing the full booking cost.",
+    "shortWhy": "Plans change. Losing the whole booking would sting. The Decider says the extra flexibility is worth paying for.",
     "shortChange": "Raise confidence that the trip will happen from 80% to 95%, and the answer becomes No.",
     "perspective": "Personal money choice"
   },
@@ -458,7 +458,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible happiness is worth the disappointment, given how emotionally strong you feel.",
+    "shortWhy": "A little awkwardness, a real chance of something good. With these feelings and odds, The Decider says ask.",
     "shortChange": "Lower confidence in the response from 50% to 25%, and the answer becomes No.",
     "perspective": "Personal happiness choice"
   },
@@ -501,7 +501,7 @@ const items=[
     "expected": false,
     "importance": "Life changing",
     "currency": "GBP",
-    "shortWhy": "The hoped-for fresh start does not quite outweigh how unhappy a difficult move could leave you.",
+    "shortWhy": "New city, new you? Maybe. But the unhappy version hits hard enough that The Decider says hold off for now.",
     "shortChange": "A short trial that makes the unhappy outcome less painful changes the answer to Yes.",
     "perspective": "Personal happiness choice"
   },
@@ -544,7 +544,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "Having the conversation leaves you better off in both situations than leaving things unsaid.",
+    "shortWhy": "Awkward now, or still on your mind next week? Both scenarios favour speaking up. The Decider says have the conversation.",
     "shortChange": "If a bad conversation would hurt much more than you first thought, the answer changes to No.",
     "perspective": "Personal happiness choice"
   },
@@ -587,7 +587,7 @@ const items=[
     "expected": true,
     "importance": "Everyday",
     "currency": "GBP",
-    "shortWhy": "A little disappointment is a manageable price for the chance of finding something you enjoy.",
+    "shortWhy": "You might love it. You might not. The disappointment looks manageable, so The Decider says give it a go.",
     "shortChange": "If an unsuccessful attempt would feel much worse, the answer changes to No.",
     "perspective": "Personal happiness choice"
   },
@@ -628,7 +628,7 @@ const items=[
     "expected": true,
     "importance": "Everyday",
     "currency": "GBP",
-    "shortWhy": "The chance of enjoyment and achievement is worth the possible disappointment here.",
+    "shortWhy": "You don’t have to be the favourite for entering to be worth it. The Decider says put your name down.",
     "shortChange": "Lower your confidence from 35% to 20%, and the answer becomes No.",
     "perspective": "Personal happiness choice"
   },
@@ -669,7 +669,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible fulfilment is worth the risk, given your confidence and emotional strength.",
+    "shortWhy": "A stretch can be exciting as well as scary. With these odds and emotional strength, The Decider says take the role.",
     "shortChange": "Lower confidence in things working out from 60% to 50%, and the answer becomes No.",
     "perspective": "Personal happiness choice"
   },
@@ -712,7 +712,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "Reconnecting offers enough happiness to be worth the possible disappointment.",
+    "shortWhy": "One message could bring someone back into your life. Here, the possible happiness beats the awkwardness. The Decider says reach out.",
     "shortChange": "If an unhappy response would hurt much more, the answer changes to No.",
     "perspective": "Personal happiness choice"
   },
@@ -753,7 +753,7 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible joy and confidence are worth the nerves and disappointment you might feel.",
+    "shortWhy": "Nerves don’t automatically mean no. The chance of a great feeling makes this worth a shot. The Decider says step up.",
     "shortChange": "Lower confidence in the performance going as hoped from 50% to 30%, and the answer becomes No.",
     "perspective": "Personal happiness choice"
   },
@@ -796,7 +796,7 @@ const items=[
     "expected": false,
     "importance": "Everyday",
     "currency": "GBP",
-    "shortWhy": "The chance of a lovely evening is outweighed by how upsetting a disappointing one would feel.",
+    "shortWhy": "Hosting sounds fun—until it feels like a test of whether people like you. The Decider says take some pressure off first.",
     "shortChange": "Make it a smaller gathering with less emotional pressure, and the answer becomes Yes.",
     "perspective": "Personal happiness choice"
   },
@@ -839,7 +839,7 @@ const items=[
     "expected": false,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "The possible enjoyment does not quite outweigh how difficult an unhappy trip could feel.",
+    "shortWhy": "Freedom sounds great. Feeling miserable far from home, less so. The Decider says make the first adventure a little easier.",
     "shortChange": "A shorter, easier first trip reduces the emotional downside enough to change the answer to Yes.",
     "perspective": "Personal happiness choice"
   },
@@ -871,7 +871,7 @@ const items=[
       "D": "The existing business preserves its starting value"
     },
     "why": "The upside is attractive, but the possible £20bn loss takes too much of the investors’ £30bn financial cushion.",
-    "shortWhy": "The upside is attractive, but the possible £20bn loss takes too much of the investors’ £30bn financial cushion.",
+    "shortWhy": "A £20bn win sounds great. A £20bn loss eats two-thirds of the investors’ cushion. The Decider says hold off.",
     "lesson": "The result depends on the perspective and assumptions. A public decision also needs environmental, legal and distributional considerations.",
     "change": "Raise confidence from 60% to 65%, or credibly reduce the possible loss to £15bn, and the answer becomes Yes.",
     "shortChange": "Raise confidence from 60% to 65%, or credibly reduce the possible loss to £15bn, and the answer becomes Yes.",
@@ -923,7 +923,7 @@ const items=[
       "D": "Existing investments suffer a smaller decline"
     },
     "why": "At these odds, the project’s potential value justifies the downside relative to the investors’ resources.",
-    "shortWhy": "At these odds, the project’s potential value justifies the downside relative to the investors’ resources.",
+    "shortWhy": "Big project. Big risks. But these odds and resources give the investment enough room to work. The Decider says back it.",
     "lesson": "The result depends on the perspective and assumptions. A public decision also needs environmental, legal and distributional considerations.",
     "change": "Reduce confidence in the favourable scenario from 70% to 30%, and the answer becomes No.",
     "shortChange": "Reduce confidence in the favourable scenario from 70% to 30%, and the answer becomes No.",
@@ -966,7 +966,7 @@ const items=[
       "D": "No material change to council finances"
     },
     "why": "The possible loss would consume too much of the council’s assumed financial capacity, despite the hoped-for gain.",
-    "shortWhy": "The possible loss would consume too much of the council’s assumed financial capacity, despite the hoped-for gain.",
+    "shortWhy": "A shiny stadium. A very un-shiny bill if it flops. The Decider says this deal asks too much of the council.",
     "lesson": "The result depends on the perspective and assumptions. A public decision also needs environmental, legal and distributional considerations.",
     "change": "If credible protections reduce the council’s bad-outcome loss from £70m to £25m, the answer becomes Yes.",
     "shortChange": "If credible protections reduce the council’s bad-outcome loss from £70m to £25m, the answer becomes Yes.",
@@ -1011,7 +1011,7 @@ const items=[
       "D": "No flood and no new protection costs"
     },
     "why": "Protection costs money even without a flood. Here, reducing the authority’s large flood exposure makes that cost worthwhile.",
-    "shortWhy": "Protection costs money even without a flood. Here, reducing the authority’s large flood exposure makes that cost worthwhile.",
+    "shortWhy": "Nobody cheers for a flood-defence bill. But the possible bill without protection is much worse. The Decider says build.",
     "lesson": "The result depends on the perspective and assumptions. A public decision also needs environmental, legal and distributional considerations.",
     "change": "Reduce the chance of a damaging flood over the whole appraisal period from 35% to 5%, and the answer becomes No on these financial inputs.",
     "shortChange": "Reduce the chance of a damaging flood over the whole appraisal period from 35% to 5%, and the answer becomes No on these financial inputs.",
@@ -1029,6 +1029,48 @@ const items=[
       "Flood during the period",
       "No flood during the period"
     ]
+  },
+  {
+    "id": "phone-warranty",
+    "category": "money",
+    "kind": "money",
+    "question": "Should I pay for an extended warranty on my phone?",
+    "teaser": "The phone is expensive. Does that make the extra cover worth it?",
+    "person": "Alex",
+    "period": "The two-year extended-cover period",
+    "story": "Alex is offered two years of extra phone cover for £180, plus a £50 claim fee if a covered fault happens. Without it, the assumed repair or replacement bill is £900. Alex compares buying the cover with paying any eligible bill personally.",
+    "situations": [
+      "The phone has no covered fault during the period",
+      "A covered fault means a £900 repair or replacement bill"
+    ],
+    "pay": {
+      "A": -180,
+      "B": -230,
+      "C": 0,
+      "D": -900
+    },
+    "p": 90,
+    "resources": 1500,
+    "notes": {
+      "A": "£180 premium, with no claim",
+      "B": "£180 premium plus a £50 claim fee",
+      "C": "No premium and no repair bill",
+      "D": "£900 paid personally for repair or replacement"
+    },
+    "why": "At a 10% chance of a covered fault over two years and £1,500 of resources, the protection is too expensive for the risk transferred.",
+    "shortWhy": "An expensive phone doesn’t automatically need expensive cover. At this price and these odds, The Decider says keep the £180.",
+    "lesson": "The value of cover depends on the bill it actually removes, its price, the chance of claiming and your ability to pay the bill yourself.",
+    "change": "Raise the chance of a covered fault over the two years from 10% to 30%, keeping everything else the same, and the answer becomes Yes.",
+    "shortChange": "Think a covered fault is 30% likely rather than 10% over two years? The Decider switches to Yes.",
+    "variant": {
+      "p": 70,
+      "expected": true
+    },
+    "expected": false,
+    "importance": "Everyday",
+    "currency": "GBP",
+    "perspective": "Personal money choice",
+    "basis": "Prices, claim fees and probabilities are example inputs, not a named warranty offer or a reliability forecast. Count only the repair cost you would personally pay after any existing cover. Check which faults the extra policy actually covers."
   }
 ];
 function stateFor(e,variation=false){
