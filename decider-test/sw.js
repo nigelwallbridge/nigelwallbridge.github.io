@@ -1,5 +1,5 @@
-const CACHE_NAME="6026b0b3abc7";
-const FILES=["index.html","app.531ae9ccc4aa.js","engine.635347268be6.js","examples.126e8cc3f2db.js","explanations.782e2d12123a.js","icon-192.png","icon-512.png","icon-maskable.png","install.1440d438c83c.js","manifest.webmanifest","precision.da96ebac7d60.js","services.969107269f68.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.3d760676ad13.js","welcome.76e7fd2b3d00.css","welcome.e132fb12b3f2.js"];
+const CACHE_NAME="e512facd7366";
+const FILES=["index.html","app.531ae9ccc4aa.js","engine.635347268be6.js","examples.5b7491707d25.js","explanations.782e2d12123a.js","icon-192.png","icon-512.png","icon-maskable.png","install.1440d438c83c.js","manifest.webmanifest","precision.da96ebac7d60.js","services.969107269f68.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.3d760676ad13.js","welcome.fec025a4d564.css","welcome.49accf7f6ac5.js"];
 const BASE=new URL('./',self.location.href);
 const PREFIX='decider:'+BASE.href+':';
 const CACHE=PREFIX+CACHE_NAME;
