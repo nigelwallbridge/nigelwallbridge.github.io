@@ -9,11 +9,11 @@ const configs={
     "questions": {
       "A": "If I run the campaign and customers respond strongly…",
       "B": "If I run the campaign and customer demand disappoints…",
-      "C": "If I keep my current marketing plan and customers respond strongly…",
-      "D": "If I keep my current marketing plan and customer demand disappoints…"
+      "C": "If I keep the current plan, though the campaign would have drawn a strong response…",
+      "D": "If I keep the current plan and the campaign would have drawn a weak response…"
     },
     "simpleQuestion": "If I keep my current marketing plan…",
-    "probabilityQuestion": "How likely is a strong customer response?",
+    "probabilityQuestion": "How likely is a strong customer response if I run the campaign?",
     "event": "customers responding strongly",
     "scenarios": [
       "customers respond strongly",
@@ -87,11 +87,11 @@ const configs={
     "questions": {
       "A": "If I launch the product and the market responds well…",
       "B": "If I launch the product and the market response disappoints…",
-      "C": "If I stick with my existing products and the market responds well…",
-      "D": "If I stick with my existing products and the market response disappoints…"
+      "C": "If I stick with existing products, though the new launch would have had a strong response…",
+      "D": "If I stick with existing products and the new launch would have disappointed…"
     },
     "simpleQuestion": "If I stick with my existing products…",
-    "probabilityQuestion": "How likely is a strong market response?",
+    "probabilityQuestion": "How likely is a strong response if I launch the new product?",
     "event": "a strong market response",
     "scenarios": [
       "the market responds well",
@@ -321,11 +321,11 @@ const configs={
     "questions": {
       "A": "If I take the bonus-based job and performance earns the hoped-for bonus…",
       "B": "If I take the bonus-based job and performance falls short…",
-      "C": "If I stay with the guaranteed pay rise and performance earns the hoped-for bonus…",
-      "D": "If I stay with the guaranteed pay rise and performance falls short…"
+      "C": "If I take the guaranteed pay rise, though I would have earned the bonus…",
+      "D": "If I take the guaranteed pay rise and I would have missed the bonus…"
     },
     "simpleQuestion": "If I stay with the guaranteed pay rise…",
-    "probabilityQuestion": "How likely am I to earn the hoped-for bonus?",
+    "probabilityQuestion": "How likely am I to earn the hoped-for bonus if I take that job?",
     "event": "earning the hoped-for bonus",
     "scenarios": [
       "performance earns the hoped-for bonus",
@@ -644,11 +644,11 @@ const configs={
     "questions": {
       "A": "If I lead the project and the support and working relationships are good…",
       "B": "If I lead the project and the support and working relationships are difficult…",
-      "C": "If I take the smaller familiar role and the support and working relationships are good…",
-      "D": "If I take the smaller familiar role and the support and working relationships are difficult…"
+      "C": "If I take the smaller role, though leading would have brought good support and relationships…",
+      "D": "If I take the smaller role and leading would have been harder than hoped…"
     },
     "simpleQuestion": "If I take the smaller familiar role…",
-    "probabilityQuestion": "How likely are good support and working relationships?",
+    "probabilityQuestion": "How likely are good support and working relationships if I lead?",
     "event": "good support and working relationships",
     "scenarios": [
       "the support and working relationships are good",
@@ -889,8 +889,8 @@ const configs={
     "questions": {
       "A": "If we commit to building the third runway and demand, charges and delivery support expansion…",
       "B": "If we commit to building the third runway and commercial performance or delivery disappoints…",
-      "C": "If we retain the existing airport business and demand, charges and delivery support expansion…",
-      "D": "If we retain the existing airport business and commercial performance or delivery disappoints…"
+      "C": "If we retain the existing business, though demand, charges and delivery would have supported expansion…",
+      "D": "If we retain the existing business and expansion would have disappointed…"
     },
     "simpleQuestion": "If we retain the existing airport business…",
     "probabilityQuestion": "How likely are demand, charges and delivery to support expansion?",
@@ -928,8 +928,8 @@ const configs={
     "questions": {
       "A": "If we finance the new power station and power-market conditions and delivery support the project…",
       "B": "If we finance the new power station and costs, delays or power-market conditions disappoint…",
-      "C": "If we retain the existing energy investments and power-market conditions and delivery support the project…",
-      "D": "If we retain the existing energy investments and costs, delays or power-market conditions disappoint…"
+      "C": "If we keep the existing investments, though market conditions and delivery would have supported the project…",
+      "D": "If we keep the existing investments and the project would have disappointed…"
     },
     "simpleQuestion": "If we retain the existing energy investments…",
     "probabilityQuestion": "How likely are market conditions and delivery to support the project?",
@@ -967,11 +967,11 @@ const configs={
     "questions": {
       "A": "If we fund the stadium and attendance and local commercial activity are strong…",
       "B": "If we fund the stadium and attendance and commercial activity disappoint…",
-      "C": "If we decline the stadium contribution and attendance and local commercial activity are strong…",
-      "D": "If we decline the stadium contribution and attendance and commercial activity disappoint…"
+      "C": "If we decline the contribution, though the stadium would have drawn strong attendance and activity…",
+      "D": "If we decline the contribution and the stadium would have disappointed…"
     },
     "simpleQuestion": "If we decline the stadium contribution…",
-    "probabilityQuestion": "How likely are strong attendance and local commercial activity?",
+    "probabilityQuestion": "How likely are strong attendance and commercial activity if the stadium is built?",
     "event": "strong attendance and local commercial activity",
     "scenarios": [
       "attendance and local commercial activity are strong",
@@ -1045,8 +1045,8 @@ const configs={
     "questions": {
       "A": "If I buy the extended cover and my phone has no covered fault over the two years…",
       "B": "If I buy the extended cover and my phone develops a covered fault in that period…",
-      "C": "If I skip the extended cover and my phone has no covered fault over the two years…",
-      "D": "If I skip the extended cover and my phone develops a covered fault in that period…"
+      "C": "If I skip the cover and my phone has no fault of the kind it would cover…",
+      "D": "If I skip the cover and my phone gets a fault the policy would have covered…"
     },
     "simpleQuestion": "If I skip the extended cover…",
     "probabilityQuestion": "How likely is my phone to avoid a covered fault over the two years?",
