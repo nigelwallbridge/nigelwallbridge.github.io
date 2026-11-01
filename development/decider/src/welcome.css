@@ -15,3 +15,7 @@
 .example-card.happiness>span.card-assumptions.card-assumptions{color:#546761}
 
 .example-card.money>span.card-answer,.example-card.happiness>span.card-answer{font-size:13px;line-height:1.5;font-weight:600;max-width:230px}.example-card .card-answer b{display:block;font-size:29px;margin-top:2px}.welcome-examples>.example-filter,#app:has(.example-library-group)>.example-filter{border-top:1px solid #c9d0c5;padding-top:17px;margin-top:25px;font-size:12px;font-weight:500}.welcome-examples>.example-filter select{min-height:43px;font-size:14px;padding:9px 12px}.compact-example .example-verdict>span{font-size:14px}.compact-example .example-verdict h2{margin-bottom:0}
+
+.dynamic-context{padding:15px 17px;background:#20312a;border-left:3px solid #cfff78;border-radius:8px;margin:18px 0}.dynamic-context strong{font-size:14px}.dynamic-context p{font-size:13px;line-height:1.5;color:#bcd0c2;margin:7px 0}.dynamic-help{font-size:13px;line-height:1.55;color:#bed2c2;background:#1b2a23;border-radius:10px;padding:12px 14px;margin:0 0 18px}.payoff .ends span{max-width:48%;overflow-wrap:anywhere}.answer h1{overflow-wrap:anywhere}
+
+.answer.contextual h1{font-size:clamp(34px,9vw,48px);line-height:1.12;letter-spacing:-1.3px}.chart-key span{max-width:100%;overflow-wrap:anywhere}

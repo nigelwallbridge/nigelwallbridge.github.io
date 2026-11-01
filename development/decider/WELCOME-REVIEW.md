@@ -1,17 +1,9 @@
-# The Decider 1.18
+# The Decider 1.19 — dynamic-labelling development trial
 
-Public promotion of the tested welcome and example experience.
+All 25 current examples have explicit labels for the four outcomes, simplified alternative, probability, starting resources, outcome-slider endpoints, result and Explore. Direct entry retains its general wording. Monetary input remains net gain/loss (negative for costs), and existing happiness numbers and scales are preserved. No example outcomes, odds or financial resources have been changed.
 
-- Original brand promise and distinct personal/example journeys.
-- 25 examples with The Decider's AI-free decision, concise explanations and editable assumptions.
-- Topic selectors below the example cards; phone extended-warranty example.
-- Installation and offline calculations, with a deliberate update-and-restart flow.
-- Content-hashed JavaScript and CSS assets to avoid mixing releases.
+The probability meaning is explicit: warranty = no covered fault; refundable booking = trip goes ahead; lottery = chosen numbers win; flood defences = damaging flood during the whole appraisal period. UI help shows the complementary probability. Both alternatives use the same two scenarios.
 
-Public app: /sigfi/. The repository home forwards there. Test preview: /decider-test/.
+Dynamic labels live in src/dynamic-labels.js. DYNAMIC-LABELLING.md lists all wording for review. Tests enforce coverage, scenario/choice mappings, probability orientation and calculation invariance. Context-aware results and Explore derive from current answers; example commentary is never reused as a computed personal explanation.
 
-Builds: npm run build produces the labelled development preview in dist/. npm run build:public produces the public app in dist-public/, with public app name and no development banner. Both builds use the same source and mathematical engine. Version 1.18 is shown in the footer.
-
-Calculation, precision, threshold and example checks pass. Browser checks cover all 25 examples, both tracks, results and Explore, offline operation, contact navigation, topic selection, and mobile/desktop layouts. No live forms are submitted during verification.
-
-Rollback: retain the previous main commit and the /sigfi/ tree recorded in the local deployment record. Do not merge the whole development branch over main.
+The welcome page no longer states the collection size. Resolution Advisory is applied to this development version. Installation, contact and analytics configuration are unchanged. Public 1.18 is not replaced by this trial.
