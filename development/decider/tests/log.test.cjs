@@ -15,7 +15,7 @@ assert.equal(analyse({...base,resources:4,p:0}).go,-Infinity);
 const neither={...base,pay:{A:-5,B:-5,C:-6,D:-6}};
 assert.equal(analyse(neither).verdict,'Rework the alternatives');assert.equal(quick(neither).goForIt,false);
 assert.equal(quick({...base,pay:{A:1,B:1,C:1,D:1}}).goForIt,false);
-assert.equal(quick({...base,resources:100,ruinGo:true}).goForIt,false);
+assert.equal(quick({...base,resources:100,ruinGo:true}).goForIt,quick({...base,resources:100}).goForIt);
 assert.equal(quick({...base,uncertain:true,low:0,high:100}).goForIt,false);
 for(const resources of [0,-1,NaN,undefined])assert.throws(()=>analyse({...base,resources}),RangeError);
 for(const p of [-1,101,NaN])assert.throws(()=>analyse({...base,p}),RangeError);

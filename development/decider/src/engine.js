@@ -15,13 +15,14 @@ function analyse(d){
  const comparison=precision.compare(d),cl=precision.compare(d,percent(lo)),ch=precision.compare(d,percent(hi));
  const diff=comparison.difference,min=Math.min(cl.difference,ch.difference),max=Math.max(cl.difference,ch.difference);
  const slope=(a-c)-(b-e),threshold=!Number.isFinite(slope)||slope===0?null:-(b-e)/slope;
- const risk=(x,y,flag)=>({worst:Math.min(x,y),loss:Math.max(0,-Math.min(x,y)),blocked:!!flag,flag:!!flag});
- const rg=risk(A,B,d.ruinGo),rs=risk(C,D,d.ruinStay);
+ const risk=(x,y)=>({worst:Math.min(x,y),loss:Math.max(0,-Math.min(x,y)),blocked:false,flag:false});
+ // Historical harm flags are intentionally ignored. Resource checks remain active.
+ const rg=risk(A,B),rs=risk(C,D);
  const resolved=comparison.resolved&&cl.resolved&&ch.resolved;
  let verdict,reason;
- if((rg.blocked||comparison.badGo)&&(rs.blocked||comparison.badStay)){verdict='Rework the alternatives';reason='Neither choice is admissible. Check harm flags and nonpositive terminal resources.';}
- else if(rg.blocked||comparison.badGo){verdict='Hold off on this version';reason=rg.blocked?'Going ahead carries serious or irreversible harm you flagged.':'A possible outcome leaves going ahead with zero or negative resources.';}
- else if(rs.blocked||comparison.badStay){verdict='Going for it passes your risk screen';reason='Staying put is inadmissible; going ahead passes the resource and harm checks.';}
+ if(comparison.badGo&&comparison.badStay){verdict='Rework the alternatives';reason='Neither choice is admissible. Check nonpositive terminal resources.';}
+ else if(comparison.badGo){verdict='Hold off on this version';reason='A possible outcome leaves going ahead with zero or negative resources.';}
+ else if(comparison.badStay){verdict='Going for it passes your risk screen';reason='Staying put is inadmissible; going ahead passes the resource checks.';}
  else if(!resolved){verdict='The numerical comparison is unresolved';reason='The utility difference is too small to resolve at the available precision. The red answer does not establish that the choices are equal.';}
  else if(cl.sign>0&&ch.sign>0){verdict='Go for it, on these assumptions';reason='Going ahead has higher expected logarithmic utility of starting resources plus outcome.';}
  else if(cl.sign<0&&ch.sign<0){verdict='Hold off, on these assumptions';reason='Staying put has higher expected logarithmic utility of starting resources plus outcome.';}
@@ -30,8 +31,8 @@ function analyse(d){
  return {p,lo,hi,go:go(p),stay:stay(p),goRange:[go(lo),go(hi)].sort((a,b)=>a-b),stayRange:[stay(lo),stay(hi)].sort((a,b)=>a-b),diff,threshold,slope,rg,rs,verdict,reason,min,max,comparison,comparisonResolved:resolved};
 }
 function quick(d){
- const r=analyse(d),admissible=!r.comparison.badGo&&!r.rg.blocked;
- const goForIt=admissible&&(r.rs.blocked||r.comparison.badStay||(r.comparisonResolved&&r.min>0));
+ const r=analyse(d),admissible=!r.comparison.badGo;
+ const goForIt=admissible&&(r.comparison.badStay||(r.comparisonResolved&&r.min>0));
  return {...r,goForIt};
 }
 // Diagnostic only: hold probability/payoffs fixed and solve EU_Go(N)=EU_Cautious(N).

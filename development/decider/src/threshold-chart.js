@@ -33,11 +33,11 @@ function thresholdChart(d){
 }
 function noThresholdCopyRaw(d,t){
  const r=SIGFI.quick(d),{A,B,C,D}=d.pay;
- if(r.comparison.badGo||r.comparison.badStay||r.rg.blocked||r.rs.blocked)return {summary:'Check the downside first.',change:'The resource or harm checks rule out at least one choice at your current position. Reducing the downside or removing the harm could change that. A graph alone cannot clear these limits.'};
+ if(r.comparison.badGo||r.comparison.badStay)return {summary:'Check the downside first.',change:'The resource checks rule out at least one choice at your current position. Reducing the downside could change that. A graph alone cannot clear these limits.'};
  if(t.equalEverywhere)return {summary:'There’s nothing to separate these choices on the outcomes you entered.',change:'Changing your starting resources alone won’t separate them. Revisit the consequences, consider what else matters, or—if the outcomes differ between scenarios—the odds.'};
  const active=d.p===0?[[B,D]]:d.p===100?[[A,C]]:[[A,C],[B,D]];
  const go=active.every(([x,y])=>x>=y)&&active.some(([x,y])=>x>y),stay=active.every(([x,y])=>x<=y)&&active.some(([x,y])=>x<y);
- if(go||stay){const choice=go?'Going ahead':'Not going ahead';return {summary:choice+' is the clear choice on these outcomes.',change:choice+' gives at least as good an outcome in every scenario you give a chance of happening, and a better outcome in at least one. Changing your starting resources alone won’t reverse that. To change the answer, the consequences would need to change, or a scenario you currently rule out would need to become possible. Harm checks still apply.'};}
+ if(go||stay){const choice=go?'Going ahead':'Not going ahead';return {summary:choice+' is the clear choice on these outcomes.',change:choice+' gives at least as good an outcome in every scenario you give a chance of happening, and a better outcome in at least one. Changing your starting resources alone won’t reverse that. To change the answer, the consequences would need to change, or a scenario you currently rule out would need to become possible. Resource-exhaustion checks still apply.'};}
  if(t.noFiniteCrossing&&d.kind==='happiness'){const choice=t.preferred==='Go'?'Going ahead':'Holding back';return {summary:choice+' stays ahead across the emotional-strength scale.',change:'With the same chances and average outcome, the steadier option stays ahead in this comparison. Revisit how each outcome might feel or how likely it is if you want to explore a different answer.'};}
  if(t.noFiniteCrossing){const choice=t.preferred==='Go'?'Going ahead':'Not going ahead';return {summary:choice+' comes out ahead at every admissible resource level.',change:'The choices have the same average payoff, but '+(t.preferred==='Go'?'not going ahead':'going ahead')+' has the wider spread of outcomes. Under the logarithmic model, '+choice.toLowerCase()+' stays preferable however your starting resources change. Different odds or consequences could change that.'};}
  if(!r.comparisonResolved)return {summary:'These choices are too close for a clear numerical answer.',change:'The difference is beyond the precision available here. That is not proof that the choices are equal. Better information or a change in the consequences could make the comparison clearer.'};
@@ -51,7 +51,7 @@ function noThresholdCopy(d,t){
  return copy;
  }
  if(copy.summary==='Check the downside first.')return {summary:'One or both choices need a closer look. See why below.',change:copy.change};
- const human=text=>text.replaceAll('starting resources','emotional strength').replaceAll('starting resources','emotional strength').replaceAll('resource or harm checks','setback or serious-harm checks').replaceAll('resource level','level of emotional strength').replaceAll('the resource','the emotional-strength').replaceAll('gains or losses','possible feelings').replaceAll('consequences','outcomes');
+ const human=text=>text.replaceAll('starting resources','emotional strength').replaceAll('starting resources','emotional strength').replaceAll('resource checks','resource checks').replaceAll('resource level','level of emotional strength').replaceAll('the resource','the emotional-strength').replaceAll('gains or losses','possible feelings').replaceAll('consequences','outcomes');
  return {summary:human(copy.summary),change:human(copy.change)};
 }
 root.SIGFI.noThresholdCopy=noThresholdCopy;

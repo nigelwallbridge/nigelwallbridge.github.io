@@ -6,7 +6,7 @@ assert.ok(Math.abs(resourceThresholds(d).roots[0].N-6.44203723713669)<1e-8);
 assert.equal(analyse({...d,resources:4}).go,-Infinity);
 assert.equal(quick({...d,resources:1,pay:{A:-1,B:-1,C:-1,D:-1}}).goForIt,false);
 assert.equal(analyse({...d,resources:4,p:100}).go,Math.log(10));
-assert.equal(quick({...d,resources:10,ruinGo:true}).goForIt,false);
+assert.equal(quick({...d,resources:10,ruinGo:true}).goForIt,quick({...d,resources:10}).goForIt);
 assert.throws(()=>analyse({...d,resources:0}),RangeError);
 assert.equal(analyse({...d,resources:10,limit:0}).go,analyse({...d,resources:10,limit:50}).go);
 assert.equal(analyse({...d,kind:'money'}).go,analyse(d).go);

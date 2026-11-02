@@ -19,3 +19,14 @@
 .dynamic-context{padding:15px 17px;background:#20312a;border-left:3px solid #cfff78;border-radius:8px;margin:18px 0}.dynamic-context strong{font-size:14px}.dynamic-context p{font-size:13px;line-height:1.5;color:#bcd0c2;margin:7px 0}.dynamic-help{font-size:13px;line-height:1.55;color:#bed2c2;background:#1b2a23;border-radius:10px;padding:12px 14px;margin:0 0 18px}.payoff .ends span{max-width:48%;overflow-wrap:anywhere}.answer h1{overflow-wrap:anywhere}
 
 .answer.contextual h1{font-size:clamp(34px,9vw,48px);line-height:1.12;letter-spacing:-1.3px}.chart-key span{max-width:100%;overflow-wrap:anywhere}
+
+/* 1.19 calculator simplification: fixed example titles and compact context. */
+.example-input-title{font-size:30px;line-height:1.16;letter-spacing:-1px;margin:18px 0 10px;font-weight:750}
+.example-input-period{font-size:14px;color:var(--muted);margin:0 0 7px;font-style:italic}
+.example-input-back{display:inline-block;color:#a9beb2;text-decoration:none;font-size:13px;padding:5px 0;margin-bottom:22px}
+.example-input-back:hover{text-decoration:underline;color:#ecf2ed}
+.topline .scale-row{margin-left:16px;gap:7px;font-size:12px}.topline .amount-input{max-width:80px}.topline .amount-input select{padding:7px 5px;font-size:12px}.topline .route{margin-left:auto}
+.topline .importance-field{margin:0 0 0 14px;max-width:180px}.topline .importance-field label{font-size:12px;margin-bottom:4px}.topline .importance-field select{min-height:40px;padding:7px;font-size:13px}.topline .importance-field p{display:none}
+.compact-probabilities{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:11px 14px;margin-bottom:14px}.compact-probabilities>span{display:flex;flex-direction:column;gap:3px;font-size:12px;overflow-wrap:anywhere}.compact-probabilities strong{font-size:18px;font-weight:700;color:#ecf2ed}.compact-probabilities small{grid-column:1/-1;font-size:11px;color:var(--muted);text-align:right}
+.resource-info{margin-top:12px}.resource-info p{font-size:14px}
+@media(max-width:360px){.example-input-title{font-size:27px}.topline .scale-row{gap:4px;margin-left:12px}.topline .importance-field{max-width:150px;margin-left:10px}}

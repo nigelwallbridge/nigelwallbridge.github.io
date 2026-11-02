@@ -1,0 +1,1 @@
+Historical implementation only. Nothing in this directory is loaded, built or deployed. The active calculator ignores legacy ruinGo/ruinStay flags. This snapshot retains the former veto for possible future reconsideration; logarithmic utility and resource-exhaustion safeguards remain active. The preceding Git commit retains the complete former UI.
