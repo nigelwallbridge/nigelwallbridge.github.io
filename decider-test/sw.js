@@ -1,5 +1,5 @@
-const CACHE_NAME="abc4a2db5682";
-const FILES=["index.html","app.e596f790ec6a.js","dynamic-labels.77548313e80e.js","engine.635347268be6.js","examples.5b7491707d25.js","explanations.782e2d12123a.js","icon-192.png","icon-512.png","icon-maskable.png","install.9c0275db6e06.js","manifest.webmanifest","precision.da96ebac7d60.js","services.969107269f68.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.3d760676ad13.js","welcome.a776fa76a146.css","welcome.a340e31819fd.js"];
+const CACHE_NAME="d335aaed4dc8";
+const FILES=["index.html","app.b182a9287ffd.js","dynamic-labels.7215e34148e3.js","engine.aa50e5af8461.js","examples.5b7491707d25.js","explanations.410db37443dd.js","icon-192.png","icon-512.png","icon-maskable.png","install.9c0275db6e06.js","manifest.webmanifest","precision.da96ebac7d60.js","services.969107269f68.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.680702ffa774.js","welcome.e31d02b5605d.css","welcome.a340e31819fd.js"];
 const BASE=new URL('./',self.location.href);
 const PREFIX='decider:'+BASE.href+':';
 const CACHE=PREFIX+CACHE_NAME;
