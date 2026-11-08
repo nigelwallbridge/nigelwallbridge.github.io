@@ -1,5 +1,5 @@
-const CACHE_NAME="204831cbd437";
-const FILES=["index.html","app.c03e972ddbe4.js","dynamic-labels.bb97f5b0fe28.js","engine.aa50e5af8461.js","examples.c82ae16233e9.js","explanations.410db37443dd.js","icon-192.png","icon-512.png","icon-maskable.png","information.c65482b40aec.js","install.9c0275db6e06.js","manifest.webmanifest","opening-demo.ab6d2bb9cc12.js","precision.da96ebac7d60.js","services.f596c2a358c4.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.680702ffa774.js","welcome.f42eb34d1ae1.css","welcome.1e49e88c869f.js"];
+const CACHE_NAME="f26ef48c625e";
+const FILES=["index.html","app.c03e972ddbe4.js","dynamic-labels.bb97f5b0fe28.js","engine.aa50e5af8461.js","examples.c82ae16233e9.js","explanations.410db37443dd.js","icon-192.png","icon-512.png","icon-maskable.png","information.c65482b40aec.js","install.9c0275db6e06.js","manifest.webmanifest","opening-demo.ab6d2bb9cc12.js","precision.da96ebac7d60.js","services.f596c2a358c4.js","settings.26e750c8d54b.js","style.4ec06b51bac1.css","threshold-chart.680702ffa774.js","welcome.05ec25a32143.css","welcome.7c9f38725fb8.js"];
 const BASE=new URL('./',self.location.href);
 const PREFIX='decider:'+BASE.href+':';
 const CACHE=PREFIX+CACHE_NAME;
