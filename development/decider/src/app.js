@@ -32,6 +32,7 @@ const icons={money:'<svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rec
 function slider(id,label,v,min,max,display,ends,step=1){return `<section class="question"><div class="qhead"><label for="${id}">${label}</label><output id="out-${id}" for="${id}">${display}</output></div><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${v}"><div class="ends"><span>${ends[0]}</span><span>${ends[1]}</span></div></section>`;}
 function dots(n){return `<div class="progress" aria-label="Step ${n} of 3">${[1,2,3].map(i=>`<span class="${i<=n?'on':''}"></span>`).join('')}</div>`;}
 function render(){
+ clearHomepageRotation();
  if(state){state.ruinGo=false;state.ruinStay=false;}
  document.body.classList.toggle('results',screen===2);
  if(screen>=3){renderInfo();return;}

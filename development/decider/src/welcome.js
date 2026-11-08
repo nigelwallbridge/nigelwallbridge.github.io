@@ -1,7 +1,35 @@
 // Welcome preferences contain no decision inputs.
 let welcomeSeen=false,currentExampleId=null,exampleFilter='all';
 const welcomeSkipKey='decider-skip-welcome-v1';
-let openingResources=1000,openingAtBalance=false,openingVisible=false;
+let openingResources=1000,openingAtBalance=false;
+let activeTeaser=0,teaserTimer=null,teaserStopped=false;
+const teaserInterval=9000;
+const teaserMotionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+function clearHomepageRotation(){
+ if(teaserTimer!==null){clearTimeout(teaserTimer);teaserTimer=null;}
+}
+function stopHomepageRotation(){
+ teaserStopped=true;
+ clearHomepageRotation();
+}
+function scheduleHomepageRotation(){
+ clearHomepageRotation();
+ const carousel=document.getElementById('home-teaser');
+ if(!carousel||teaserStopped||teaserMotionPreference.matches||document.hidden)return;
+ if(carousel.matches(':hover')||carousel.contains(document.activeElement))return;
+ teaserTimer=setTimeout(()=>{
+  teaserTimer=null;
+  // Recheck attention in case focus or visibility changed at the timer boundary.
+  const current=document.getElementById('home-teaser');
+  if(!current||teaserStopped||teaserMotionPreference.matches||document.hidden)return;
+  if(current.matches(':hover')||current.contains(document.activeElement))return;
+  activeTeaser=(activeTeaser+1)%4;
+  renderTeaser(true);
+  scheduleHomepageRotation();
+ },teaserInterval);
+}
+document.addEventListener('visibilitychange',scheduleHomepageRotation);
+teaserMotionPreference.addEventListener('change',scheduleHomepageRotation);
 function skipWelcome(){try{return localStorage.getItem(welcomeSkipKey)==='yes';}catch{return false;}}
 function rememberWelcomeSkip(value){try{if(value)localStorage.setItem(welcomeSkipKey,'yes');else localStorage.removeItem(welcomeSkipKey);}catch{}}
 const exampleCategories=[['all','All examples'],['buying','Buying something'],['doing','Doing something'],['big','Making up my mind about big issues']];
@@ -15,44 +43,39 @@ function exampleCard(e){
 function enterOwnDecision(){
  visitPage('choose',{fresh:true});
 }
+function recommendationMarkup(headline,reason,options={}){
+ const id=options.financial?' id="demo-answer"':'';
+ return `<div class="teaser-answer"${id} ${options.financial?'aria-live="polite" aria-atomic="true"':''}><p class="teaser-recommends">The Decider recommends</p><h2>${escapeText(headline)}</h2><p class="teaser-reason">${escapeText(reason)}</p></div>`;
+}
 function openingMarkup(){
- return `<section class="opening-demo" id="opening-demo" ${openingVisible?'':'hidden'} aria-label="Guaranteed money or a chance of a larger prize">
- <div class="demo-choices"><div><span>Guaranteed</span><strong>£50,000</strong><small>Added to your starting money</small></div><div><span>Take the chance</span><strong>50% of £1 million</strong><small>Otherwise receive £0</small></div></div>
- <label class="demo-resource-label" for="demo-resources">How much money do I start with?</label>
- <div class="demo-current" id="demo-current"></div>
+ return `<h1 id="teaser-question">Would you rather have £50,000 guaranteed or a 50% chance of winning £1 million?</h1>
+ <p class="teaser-context">The best choice depends on how much money you already have. Try changing the amount below.</p>
+ <section class="opening-demo" id="opening-demo" aria-label="Change your starting money">
+ <div class="demo-money-control"><label for="demo-exact">Starting money in £</label><input id="demo-exact" type="number" min="0.000001" max="1000000000000" step="any" value="${openingResources}"></div>
  <input type="range" id="demo-resources" min="1" max="1000" step="1" value="${DeciderOpening.positionAt(openingResources)}" aria-label="Starting financial resources">
  <div class="ends"><span>£1</span><span>£100,000</span></div>
- <label class="exact-amount" for="demo-exact">Exact amount in GBP<input id="demo-exact" type="number" min="0.000001" max="1000000000000" step="any" value="${openingResources}"></label>
  <p class="error" id="demo-error" role="alert"></p>
- <div class="demo-answer" id="demo-answer" aria-live="polite" aria-atomic="true"></div>
- <button class="demo-balance" id="demo-balance">See the balance point</button>
- <p class="demo-scale-note">The balance changes at about £2,778. Move the slider to see what matters.</p>
+ ${recommendationMarkup('','',{financial:true})}
+ <div class="teaser-explore"><a href="#how">Explore why →</a><button class="demo-balance" id="demo-balance">See the balance point</button></div>
  </section>`;
 }
 function paintOpening(){
  const input=document.getElementById('demo-resources');if(!input)return;
  const answer=DeciderOpening.compare(openingResources,openingAtBalance);
- const current=openingAtBalance?'£2,777.777…':new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP',maximumFractionDigits:2}).format(openingResources);
- document.getElementById('demo-current').textContent=current;
  input.value=DeciderOpening.positionAt(openingResources);
  input.style.setProperty('--pct',input.value/10+'%');
  const result=document.getElementById('demo-answer');result.hidden=false;result.dataset.recommendation=answer.recommendation;
  const copy={
- guaranteed:['Take the guaranteed £50,000.','With this starting amount, £50,000 gives your financial position a bigger lift than taking the chance does under this rule. The possibility of receiving nothing carries more weight when you start with less.'],
- chance:['Take the 50% chance of £1 million.','You have more resources to draw on. That makes receiving nothing less significant relative to your starting position, and the possible £1 million comes out ahead under the same rule.'],
- equal:['Both choices are equivalent.','At this exact starting amount, both choices have the same score under the mathematical rule. Either choice is equivalent in this comparison.'],
+ guaranteed:['Take the guaranteed £50,000.','When you start with less, the certainty of £50,000 carries more weight than the chance of a larger prize.'],
+ chance:['Take the chance of £1 million.','With more money to draw on, receiving nothing matters less relative to your starting position, so the larger prize comes out ahead.'],
+ equal:['Both choices are equivalent.','At the exact balance point, the two choices have the same score under the mathematical rule.'],
  unresolved:['The choices are too close to separate reliably.','Try a slightly different starting amount to explore either side of the balance.']
  }[answer.recommendation];
- result.innerHTML='<strong>'+copy[0]+'</strong><p>'+copy[1]+'</p>';
+ result.querySelector('h2').textContent=copy[0];
+ result.querySelector('.teaser-reason').textContent=copy[1];
  document.getElementById('demo-error').textContent='';
 }
 function wireOpening(){
- document.getElementById('demo-reveal').onclick=()=>{
-  openingVisible=!openingVisible;
-  document.getElementById('opening-demo').hidden=!openingVisible;
-  document.getElementById('demo-reveal').setAttribute('aria-expanded',String(openingVisible));
-  document.getElementById('demo-reveal').textContent=openingVisible?'Hide the demonstration':'Discover The Decider’s answer →';
- };
  document.getElementById('demo-resources').oninput=e=>{
   openingAtBalance=false;openingResources=Math.max(1,DeciderOpening.resourcesAt(+e.target.value));
   document.getElementById('demo-exact').value=openingResources;paintOpening();
@@ -71,13 +94,61 @@ function wireOpening(){
  };
  paintOpening();
 }
+function workedTeaserMarkup(id,question){
+ const example=DeciderExamples.items.find(e=>e.id===id);
+ const result=SIGFI.quick(DeciderExamples.stateFor(example));
+ const headline=DeciderLabels.headline({templateId:id},result.goForIt);
+ let reason;
+ if(id==='repair-or-replace'){
+  reason=result.goForIt?'Replacing costs more in a smooth year, but avoids the larger old-car bill in a bad one.':'On these costs and odds, repairing gives the better balance against the money available.';
+ }else if(id==='difficult-conversation'){
+  reason=result.goForIt?'On these answers, speaking up feels better than staying quiet in both scenarios.':'On these emotional estimates, holding back gives the better balance for the reserves available.';
+ }else{
+  reason=result.goForIt?'On these project assumptions, the possible upside justifies the downside relative to the investors’ resources.':'On these assumptions, a possible £20 billion loss weighs too heavily against the investors’ £30 billion starting resources.';
+ }
+ const context=id==='heathrow-third-runway'?'Investor finances · Government approval is a separate decision.':'Example · '+DeciderLabels.configs[id].displayPeriod;
+ return `<h1 id="teaser-question">${escapeText(question)}</h1><p class="teaser-context">${escapeText(context)}</p>${recommendationMarkup(headline,reason)}<div class="teaser-explore"><a href="#example/${id}">Explore this example →</a></div>`;
+}
+function renderTeaser(transition=false){
+ const body=document.getElementById('teaser-content');if(!body)return;
+ const slides=[
+  ()=>openingMarkup(),
+  ()=>workedTeaserMarkup('repair-or-replace','Should I replace my car or repair it?'),
+  ()=>workedTeaserMarkup('difficult-conversation','Should I have that difficult conversation?'),
+  ()=>workedTeaserMarkup('heathrow-third-runway','Should investors back a third runway at Heathrow?')
+ ];
+ body.innerHTML=slides[activeTeaser]();
+ if(transition&&!teaserMotionPreference.matches){
+  body.animate([{opacity:.55},{opacity:1}],{duration:180,easing:'ease-out'});
+ }
+ document.getElementById('teaser-position').textContent=(activeTeaser+1)+' of 4';
+ if(activeTeaser===0)wireOpening();
+}
+function wireTeasers(){
+ const carousel=document.getElementById('home-teaser');
+ for(const event of ['pointerdown','input','change','click','keydown']){
+  carousel.addEventListener(event,stopHomepageRotation,{capture:true});
+ }
+ carousel.addEventListener('pointerenter',clearHomepageRotation);
+ carousel.addEventListener('pointerleave',scheduleHomepageRotation);
+ carousel.addEventListener('focusin',clearHomepageRotation);
+ carousel.addEventListener('focusout',event=>{
+  if(!carousel.contains(event.relatedTarget))scheduleHomepageRotation();
+ });
+ for(const [id,step] of [['teaser-previous',-1],['teaser-next',1]]){
+  document.getElementById(id).onclick=()=>{
+   stopHomepageRotation();activeTeaser=(activeTeaser+step+4)%4;renderTeaser(true);
+  };
+ }
+ renderTeaser();scheduleHomepageRotation();
+}
 function renderWelcome(){
  document.body.classList.remove('results');
  const examples=featuredExampleIds.map(id=>DeciderExamples.items.find(e=>e.id===id));
- app.innerHTML=`<section class="opening-hero"><div class="opening-shortcuts"><button class="primary" id="welcome-start">Try my own decision →</button><a href="#examples">Explore worked examples</a></div><p class="welcome-eyebrow">A choice worth thinking about</p><h1>Would you rather have £50,000 guaranteed or a 50% chance of winning £1 million?</h1><p class="opening-intro">There’s a mathematically reasoned answer. But it depends on something you might not expect.</p><button class="explore-cta demo-reveal" id="demo-reveal" aria-expanded="${openingVisible}" aria-controls="opening-demo">${openingVisible?'Hide the demonstration':'Discover The Decider’s answer →'}</button>${openingMarkup()}<label class="welcome-skip"><input type="checkbox" id="welcome-skip" ${skipWelcome()?'checked':''}><span>Skip this next time</span></label><nav class="opening-links" aria-label="Learn about The Decider"><a href="#how">How it works</a><a href="#about">About The Decider</a></nav></section><section class="welcome-examples" aria-labelledby="example-heading"><p class="welcome-eyebrow">Worked examples</p><h2 id="example-heading">When would you use it?</h2><p class="welcome-description">Buying something. Doing something. Making up your mind about big issues.</p><div class="example-grid">${examples.map(exampleCard).join('')}</div><div class="example-browse"><a href="#examples">Browse all examples →</a></div></section>`;
+ app.innerHTML=`<section class="opening-hero"><div class="opening-shortcuts"><button class="primary" id="welcome-start">Try my own decision →</button><a href="#examples">Explore worked examples</a></div><section class="home-teaser" id="home-teaser" aria-roledescription="carousel" aria-label="Four decisions to explore"><div class="teaser-content" id="teaser-content"></div><nav class="teaser-navigation" aria-label="Choose a teaser"><button id="teaser-previous" aria-label="Previous teaser" aria-controls="teaser-content">← Previous</button><span id="teaser-position">1 of 4</span><button id="teaser-next" aria-label="Next teaser" aria-controls="teaser-content">Next →</button></nav></section><label class="welcome-skip"><input type="checkbox" id="welcome-skip" ${skipWelcome()?'checked':''}><span>Skip this next time</span></label><nav class="opening-links" aria-label="Learn about The Decider"><a href="#how">How it works</a><a href="#about">About The Decider</a></nav></section><section class="welcome-examples" aria-labelledby="example-heading"><p class="welcome-eyebrow">Worked examples</p><h2 id="example-heading">When would you use it?</h2><p class="welcome-description">Buying something. Doing something. Making up your mind about big issues.</p><div class="example-grid">${examples.map(exampleCard).join('')}</div><div class="example-browse"><a href="#examples">Browse all examples →</a></div></section>`;
  document.getElementById('welcome-start').onclick=enterOwnDecision;
  document.getElementById('welcome-skip').onchange=e=>rememberWelcomeSkip(e.target.checked);
- wireOpening();
+ wireTeasers();
 }
 function renderExampleLibrary(){
  const examples=DeciderExamples.items.filter(e=>exampleFilter==='all'||e.navigationCategories.includes(exampleFilter));
