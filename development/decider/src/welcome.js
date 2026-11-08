@@ -59,18 +59,19 @@ function openingMarkup(){
  <div class="teaser-explore"><a href="#how">Explore why →</a><button class="demo-balance" id="demo-balance">See the balance point</button></div>
  </section>`;
 }
+const openingAnswerCopy={
+ guaranteed:['Take the guaranteed £50,000.','When you start with less, the certainty of £50,000 carries more weight than the chance of a larger prize.'],
+ chance:['Take the chance of £1 million.','With more money to draw on, receiving nothing matters less relative to your starting position, so the larger prize comes out ahead.'],
+ equal:['Both choices are equivalent.','At the exact balance point, the two choices have the same score under the mathematical rule.'],
+ unresolved:['The choices are too close to separate reliably.','Try a slightly different starting amount to explore either side of the balance.']
+ };
 function paintOpening(){
  const input=document.getElementById('demo-resources');if(!input)return;
  const answer=DeciderOpening.compare(openingResources,openingAtBalance);
  input.value=DeciderOpening.positionAt(openingResources);
  input.style.setProperty('--pct',input.value/10+'%');
  const result=document.getElementById('demo-answer');result.hidden=false;result.dataset.recommendation=answer.recommendation;
- const copy={
- guaranteed:['Take the guaranteed £50,000.','When you start with less, the certainty of £50,000 carries more weight than the chance of a larger prize.'],
- chance:['Take the chance of £1 million.','With more money to draw on, receiving nothing matters less relative to your starting position, so the larger prize comes out ahead.'],
- equal:['Both choices are equivalent.','At the exact balance point, the two choices have the same score under the mathematical rule.'],
- unresolved:['The choices are too close to separate reliably.','Try a slightly different starting amount to explore either side of the balance.']
- }[answer.recommendation];
+ const copy=openingAnswerCopy[answer.recommendation];
  result.querySelector('h2').textContent=copy[0];
  result.querySelector('.teaser-reason').textContent=copy[1];
  document.getElementById('demo-error').textContent='';
@@ -109,20 +110,55 @@ function workedTeaserMarkup(id,question){
  const context=id==='heathrow-third-runway'?'Investor finances · Government approval is a separate decision.':'Example · '+DeciderLabels.configs[id].displayPeriod;
  return `<h1 id="teaser-question">${escapeText(question)}</h1><p class="teaser-context">${escapeText(context)}</p>${recommendationMarkup(headline,reason)}<div class="teaser-explore"><a href="#example/${id}">Explore this example →</a></div>`;
 }
-function renderTeaser(transition=false){
- const body=document.getElementById('teaser-content');if(!body)return;
- const slides=[
+function teaserSlides(){
+ return [
   ()=>openingMarkup(),
   ()=>workedTeaserMarkup('repair-or-replace','Should I replace my car or repair it?'),
   ()=>workedTeaserMarkup('difficult-conversation','Should I have that difficult conversation?'),
   ()=>workedTeaserMarkup('heathrow-third-runway','Should investors back a third runway at Heathrow?')
  ];
- body.innerHTML=slides[activeTeaser]();
- if(transition&&!teaserMotionPreference.matches){
-  body.animate([{opacity:.55},{opacity:1}],{duration:180,easing:'ease-out'});
+}
+function fitTeaserStage(){
+ const stage=document.getElementById('teaser-stage');if(!stage)return;
+ const probe=document.createElement('div');probe.className='teaser-content teaser-measure';
+ probe.inert=true;probe.setAttribute('aria-hidden','true');stage.append(probe);
+ let height=0;
+ for(const [index,slide] of teaserSlides().entries()){
+  probe.innerHTML=slide();
+  for(const node of probe.querySelectorAll('[id]'))node.removeAttribute('id');
+  if(index===0){
+   // Different answer lines wrap differently at each phone/desktop width.
+   for(const [headline,reason] of Object.values(openingAnswerCopy)){
+    probe.querySelector('.teaser-answer h2').textContent=headline;
+    probe.querySelector('.teaser-reason').textContent=reason;
+    height=Math.max(height,probe.getBoundingClientRect().height);
+   }
+  }
+  height=Math.max(height,probe.getBoundingClientRect().height);
  }
+ probe.remove();stage.style.minHeight=Math.ceil(height)+'px';
+}
+window.addEventListener('resize',fitTeaserStage);
+function renderTeaser(transition=false,direction=1){
+ const body=document.getElementById('teaser-content');if(!body)return;
+ const stage=document.getElementById('teaser-stage');
+ body.getAnimations().forEach(animation=>animation.cancel());
+ stage.querySelectorAll('.teaser-outgoing').forEach(node=>node.remove());
+ let outgoing=null;
+ if(transition&&!teaserMotionPreference.matches){
+  outgoing=body.cloneNode(true);outgoing.removeAttribute('id');
+  outgoing.classList.add('teaser-outgoing');outgoing.inert=true;outgoing.setAttribute('aria-hidden','true');
+  for(const node of outgoing.querySelectorAll('[id]'))node.removeAttribute('id');
+  stage.append(outgoing);
+ }
+ body.innerHTML=teaserSlides()[activeTeaser]();
  document.getElementById('teaser-position').textContent=(activeTeaser+1)+' of 4';
  if(activeTeaser===0)wireOpening();
+ if(outgoing){
+  const options={duration:700,easing:'cubic-bezier(.22,.61,.36,1)'};
+  outgoing.animate([{transform:'translateX(0)',opacity:1},{transform:`translateX(${-direction*100}%)`,opacity:.35}],options).finished.catch(()=>{}).finally(()=>outgoing.remove());
+  body.animate([{transform:`translateX(${direction*100}%)`,opacity:.35},{transform:'translateX(0)',opacity:1}],options).finished.catch(()=>{});
+ }
 }
 function wireTeasers(){
  const carousel=document.getElementById('home-teaser');
@@ -137,15 +173,15 @@ function wireTeasers(){
  });
  for(const [id,step] of [['teaser-previous',-1],['teaser-next',1]]){
   document.getElementById(id).onclick=()=>{
-   stopHomepageRotation();activeTeaser=(activeTeaser+step+4)%4;renderTeaser(true);
+   stopHomepageRotation();activeTeaser=(activeTeaser+step+4)%4;renderTeaser(true,step);
   };
  }
- renderTeaser();scheduleHomepageRotation();
+ renderTeaser();fitTeaserStage();scheduleHomepageRotation();
 }
 function renderWelcome(){
  document.body.classList.remove('results');
  const examples=featuredExampleIds.map(id=>DeciderExamples.items.find(e=>e.id===id));
- app.innerHTML=`<section class="opening-hero"><div class="opening-shortcuts"><button class="primary" id="welcome-start">Try my own decision →</button><a href="#examples">Explore worked examples</a></div><section class="home-teaser" id="home-teaser" aria-roledescription="carousel" aria-label="Four decisions to explore"><div class="teaser-content" id="teaser-content"></div><nav class="teaser-navigation" aria-label="Choose a teaser"><button id="teaser-previous" aria-label="Previous teaser" aria-controls="teaser-content">← Previous</button><span id="teaser-position">1 of 4</span><button id="teaser-next" aria-label="Next teaser" aria-controls="teaser-content">Next →</button></nav></section><label class="welcome-skip"><input type="checkbox" id="welcome-skip" ${skipWelcome()?'checked':''}><span>Skip this next time</span></label><nav class="opening-links" aria-label="Learn about The Decider"><a href="#how">How it works</a><a href="#about">About The Decider</a></nav></section><section class="welcome-examples" aria-labelledby="example-heading"><p class="welcome-eyebrow">Worked examples</p><h2 id="example-heading">When would you use it?</h2><p class="welcome-description">Buying something. Doing something. Making up your mind about big issues.</p><div class="example-grid">${examples.map(exampleCard).join('')}</div><div class="example-browse"><a href="#examples">Browse all examples →</a></div></section>`;
+ app.innerHTML=`<section class="opening-hero"><div class="opening-shortcuts"><button class="primary" id="welcome-start">Try my own decision →</button><a href="#examples">Explore worked examples</a></div><section class="home-teaser" id="home-teaser" aria-roledescription="carousel" aria-label="Four decisions to explore"><div class="teaser-stage" id="teaser-stage"><div class="teaser-content" id="teaser-content"></div></div><nav class="teaser-navigation" aria-label="Choose a teaser"><button id="teaser-previous" aria-label="Previous teaser" aria-controls="teaser-content">← Previous</button><span id="teaser-position">1 of 4</span><button id="teaser-next" aria-label="Next teaser" aria-controls="teaser-content">Next →</button></nav></section><label class="welcome-skip"><input type="checkbox" id="welcome-skip" ${skipWelcome()?'checked':''}><span>Skip this next time</span></label><nav class="opening-links" aria-label="Learn about The Decider"><a href="#how">How it works</a><a href="#about">About The Decider</a></nav></section><section class="welcome-examples" aria-labelledby="example-heading"><p class="welcome-eyebrow">Worked examples</p><h2 id="example-heading">When would you use The Decider?</h2><p class="welcome-description">Buying something. Doing something. Making up your mind about big issues.</p><div class="example-grid">${examples.map(exampleCard).join('')}</div><div class="example-browse"><a href="#examples">Browse all examples →</a></div></section>`;
  document.getElementById('welcome-start').onclick=enterOwnDecision;
  document.getElementById('welcome-skip').onchange=e=>rememberWelcomeSkip(e.target.checked);
  wireTeasers();

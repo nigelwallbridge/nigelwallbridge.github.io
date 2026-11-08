@@ -75,8 +75,12 @@
 .home-teaser .demo-balance{border:0;padding:8px 0;font-size:12px;color:#a9beb2;min-height:44px;background:none;text-decoration:underline;text-underline-offset:4px}
 .teaser-navigation{display:flex;justify-content:flex-start;align-items:center;gap:20px;padding:4px 0 8px;border-bottom:1px solid #34433d;font-size:12px;color:#9fb5a7}.teaser-navigation button{font:inherit;background:none;border:0;color:#c7d9cc;padding:8px 0;min-height:44px;cursor:pointer}.teaser-navigation button:hover{color:#d0ff72}
 .opening-hero .welcome-skip{font-size:12px;padding:8px 2px;min-height:40px}.opening-hero .opening-links{gap:24px}.opening-hero .opening-links a{font-size:12px;min-height:36px}
-.teaser-transition{animation:teaser-arrival .18s ease-out}
-@keyframes teaser-arrival{from{opacity:.55}to{opacity:1}}
+.teaser-stage{position:relative;overflow:hidden;isolation:isolate}
+.teaser-content{display:flow-root}
+.teaser-outgoing,.teaser-measure{position:absolute;inset:0 0 auto;pointer-events:none}
+.teaser-measure{visibility:hidden}
+body:has(.opening-hero) header #home{font-size:32px;font-weight:950;line-height:1.1}
 @media(max-width:520px){.home-teaser h1{font-size:26px}.teaser-answer>h2{font-size:32px}.teaser-context,.teaser-reason{font-size:14px}.opening-shortcuts{margin-bottom:18px}.opening-shortcuts .primary{font-size:15px;padding:12px 16px;min-height:44px}.demo-money-control{gap:5px 12px}.demo-money-control>input{font-size:17px;width:210px}.teaser-answer{margin-top:16px}}
 @media(max-width:360px){.home-teaser h1{font-size:25px}.teaser-answer>h2{font-size:30px}.demo-money-control>input{width:100%;min-height:42px}}
-@media(prefers-reduced-motion:reduce){.teaser-transition{animation:none}}
+@media(max-width:520px){body:has(.opening-hero) header #home{font-size:28px}}
+@media(max-width:360px){body:has(.opening-hero) header #home{font-size:26px}}
