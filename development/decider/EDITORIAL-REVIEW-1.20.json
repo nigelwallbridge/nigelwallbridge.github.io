@@ -1,0 +1,578 @@
+[
+  {
+    "id": "advertising",
+    "field": "stay",
+    "requested": "Go ahead  run the campaign  |  Alternative  don’t buy the new advertising",
+    "status": "applied"
+  },
+  {
+    "id": "advertising",
+    "field": "A",
+    "requested": "If I run the advertising campaign and demand increases a lot…",
+    "status": "applied"
+  },
+  {
+    "id": "advertising",
+    "field": "B",
+    "requested": "If I run the campaign and the response is weak…",
+    "status": "applied"
+  },
+  {
+    "id": "advertising",
+    "field": "C",
+    "requested": "If I don’t run the campaign, even though I think it would work…",
+    "status": "pending"
+  },
+  {
+    "id": "advertising",
+    "field": "D",
+    "requested": "If I don’t run the campaign thinking it draw weak demand…",
+    "status": "pending"
+  },
+  {
+    "id": "advertising",
+    "field": "simpleQuestion",
+    "requested": "Alternative heading  If I don’t run the additional advertising campaign…  |  Opens in Simplified",
+    "status": "applied"
+  },
+  {
+    "id": "advertising",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is it that there will be a strong customer response if I run the campaign?",
+    "status": "applied"
+  },
+  {
+    "id": "advertising",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money does the business have in reserve before this campaign?  £25,000",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "A",
+    "requested": "If I hire someone and the increase in customer demand continues…",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "B",
+    "requested": "If I hire and customer demand falls short…",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "C",
+    "requested": "If I stay solo and customer demand stays strong…",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money does my business have in reserve before hiring?  £40,000",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "yes",
+    "requested": "Result  Yes  |  Go ahead. Make the hire.",
+    "status": "applied"
+  },
+  {
+    "id": "first-employee",
+    "field": "shortWhy",
+    "requested": "The Decider’s take  Time to stop doing everything yourself? With this cash cushion, The Decider says the extra earning potential is worth the risk.",
+    "status": "applied"
+  },
+  {
+    "id": "new-product",
+    "field": "story",
+    "requested": "Story  Priya is considering a new product launch. She estimates the extra profit after development, stock and launch costs. If she holds back, a strong market could still lift sales of her existing products.",
+    "status": "applied"
+  },
+  {
+    "id": "new-product",
+    "field": "A",
+    "requested": "If I launch and the market responds well, the additional profit will be…",
+    "status": "applied"
+  },
+  {
+    "id": "new-product",
+    "field": "C",
+    "requested": "Focus on existing products, despite thinking the new product would have gone well…",
+    "status": "pending"
+  },
+  {
+    "id": "new-product",
+    "field": "D",
+    "requested": "Focus on existing products worrying that the new product would disappoint…",
+    "status": "pending"
+  },
+  {
+    "id": "new-product",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is a good response if I launch the new product?",
+    "status": "applied"
+  },
+  {
+    "id": "new-product",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money does my business have in reserve before the launch?  £30,000",
+    "status": "applied"
+  },
+  {
+    "id": "large-order",
+    "field": "A",
+    "requested": "If I accept the order and delivery and payment go smoothly…",
+    "status": "applied"
+  },
+  {
+    "id": "large-order",
+    "field": "B",
+    "requested": "If I accept it and something, perhaps delivery or payment, goes wrong…",
+    "status": "applied"
+  },
+  {
+    "id": "large-order",
+    "field": "C",
+    "requested": "If I decline this order and focus on my normal business …",
+    "status": "pending"
+  },
+  {
+    "id": "large-order",
+    "field": "D",
+    "requested": "If I decline believing that the risk is too high …",
+    "status": "pending"
+  },
+  {
+    "id": "large-order",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is it that everything would well with this large order?",
+    "status": "applied"
+  },
+  {
+    "id": "large-order",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money does my business have in reserve before taking the order?  £25,000",
+    "status": "applied"
+  },
+  {
+    "id": "equipment",
+    "field": "A",
+    "requested": "If I buy the equipment and there is work for it…",
+    "status": "applied"
+  },
+  {
+    "id": "equipment",
+    "field": "B",
+    "requested": "If I buy the equipment and there is insufficient demand for it…",
+    "status": "applied"
+  },
+  {
+    "id": "equipment",
+    "field": "C",
+    "requested": "If I don’t buy new and demand is strong…",
+    "status": "applied"
+  },
+  {
+    "id": "equipment",
+    "field": "D",
+    "requested": "If I don’t buy new but and demand is weak…",
+    "status": "applied"
+  },
+  {
+    "id": "equipment",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money does my business have in reserve before buying the equipment?  £18,000",
+    "status": "applied"
+  },
+  {
+    "id": "training-course",
+    "field": "story",
+    "requested": "Story  Noor is considering a course that might lead to better-paid work. The course fee will have to be paid whether or not that opportunity arrives. Noor compares the net financial outcomes with not taking the course.",
+    "status": "applied"
+  },
+  {
+    "id": "training-course",
+    "field": "A",
+    "requested": "If I take the course and it leads to a better paid job…",
+    "status": "applied"
+  },
+  {
+    "id": "training-course",
+    "field": "B",
+    "requested": "If I take the course and a better paid job doesn’t arrive…",
+    "status": "applied"
+  },
+  {
+    "id": "training-course",
+    "field": "C",
+    "requested": "If I skip the course, even though that new opportunity might arrive…",
+    "status": "pending"
+  },
+  {
+    "id": "training-course",
+    "field": "D",
+    "requested": "If I skip the course and find that those better paid jobs aren’t really there…",
+    "status": "applied"
+  },
+  {
+    "id": "training-course",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is the better-paid job within the year?",
+    "status": "applied"
+  },
+  {
+    "id": "lottery-ticket",
+    "field": "B",
+    "requested": "If I buy a ticket and my numbers don’t win…",
+    "status": "applied"
+  },
+  {
+    "id": "lottery-ticket",
+    "field": "C",
+    "requested": "If I skip the ticket and my favorite lucky numbers win…",
+    "status": "applied"
+  },
+  {
+    "id": "lottery-ticket",
+    "field": "D",
+    "requested": "If I skip the ticket and my numbers don’t win…",
+    "status": "applied"
+  },
+  {
+    "id": "repair-or-replace",
+    "field": "B",
+    "requested": "If I replace my car and still expensive problems occur with it…",
+    "status": "applied"
+  },
+  {
+    "id": "repair-or-replace",
+    "field": "C",
+    "requested": "If I repair my old car and motoring goes smoothly…",
+    "status": "applied"
+  },
+  {
+    "id": "repair-or-replace",
+    "field": "D",
+    "requested": "If I repair my old car and but expensive problems occur with it …",
+    "status": "applied"
+  },
+  {
+    "id": "repair-or-replace",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is this a smooth year of motoring without serious problems?",
+    "status": "applied"
+  },
+  {
+    "id": "performance-bonus",
+    "field": "C",
+    "requested": "If I stay in my guaranteed pay job, I would earn a bit more than I do now…",
+    "status": "applied"
+  },
+  {
+    "id": "performance-bonus",
+    "field": "D",
+    "requested": "The pay rise from staying",
+    "status": "applied"
+  },
+  {
+    "id": "performance-bonus",
+    "field": "D",
+    "requested": "",
+    "status": "applied"
+  },
+  {
+    "id": "performance-bonus",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money do I have in reserve before this job decision?  £15,000",
+    "status": "applied"
+  },
+  {
+    "id": "ask-someone-out",
+    "field": "A",
+    "requested": "If I ask them out and they say yes…",
+    "status": "applied"
+  },
+  {
+    "id": "ask-someone-out",
+    "field": "B",
+    "requested": "If I ask them out and they say no…",
+    "status": "applied"
+  },
+  {
+    "id": "ask-someone-out",
+    "field": "C",
+    "requested": "If I don’t ask but later find out that they would have said yes if I had asked…",
+    "status": "applied"
+  },
+  {
+    "id": "ask-someone-out",
+    "field": "D",
+    "requested": "If I don’t ask and find out that they would have said no anyway…",
+    "status": "applied"
+  },
+  {
+    "id": "ask-someone-out",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely are they to say yes?",
+    "status": "applied"
+  },
+  {
+    "id": "new-city",
+    "field": "A",
+    "requested": "If I move and life in the new place really suits me…",
+    "status": "applied"
+  },
+  {
+    "id": "new-city",
+    "field": "C",
+    "requested": "If I stay here, even though life in the new place would have suited me…",
+    "status": "applied"
+  },
+  {
+    "id": "new-city",
+    "field": "D",
+    "requested": "If I stay here and realise that life there would not suit me…",
+    "status": "applied"
+  },
+  {
+    "id": "difficult-conversation",
+    "field": "A",
+    "requested": "If I speak up and my friend is open to a discussion…",
+    "status": "applied"
+  },
+  {
+    "id": "difficult-conversation",
+    "field": "B",
+    "requested": "If I speak up and my friend is hostile or hurt…",
+    "status": "applied"
+  },
+  {
+    "id": "difficult-conversation",
+    "field": "C",
+    "requested": "If I stay quiet, though my friend would probably be open, how will I feel?…",
+    "status": "pending"
+  },
+  {
+    "id": "difficult-conversation",
+    "field": "D",
+    "requested": "If I stay quiet, thinking my friend would be hurt or hostile, then how would I feel?…",
+    "status": "pending"
+  },
+  {
+    "id": "new-hobby",
+    "field": "A",
+    "requested": "If I try the class and I love it…",
+    "status": "applied"
+  },
+  {
+    "id": "new-hobby",
+    "field": "B",
+    "requested": "If I try the class and it’s not for me…",
+    "status": "applied"
+  },
+  {
+    "id": "new-hobby",
+    "field": "C",
+    "requested": "If I don’t try, even if I think I would like it…",
+    "status": "pending"
+  },
+  {
+    "id": "new-hobby",
+    "field": "D",
+    "requested": "If I don’t try and it turns out it’s not my kind of thing…",
+    "status": "applied"
+  },
+  {
+    "id": "new-hobby",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is this class to be good for me?",
+    "status": "applied"
+  },
+  {
+    "id": "competition",
+    "field": "question",
+    "requested": "15  Should I enter a creative competition?",
+    "status": "applied"
+  },
+  {
+    "id": "competition",
+    "field": "C",
+    "requested": "If I sit it out, though I think my entry would get that response…",
+    "status": "pending"
+  },
+  {
+    "id": "challenging-role",
+    "field": "question",
+    "requested": "16  Should I volunteer for a challenging leadership role in the community?",
+    "status": "applied"
+  },
+  {
+    "id": "challenging-role",
+    "field": "A",
+    "requested": "If I volunteer and it works out both for me and the team…",
+    "status": "pending"
+  },
+  {
+    "id": "challenging-role",
+    "field": "B",
+    "requested": "If I volunteer but thins go wrong…",
+    "status": "pending"
+  },
+  {
+    "id": "challenging-role",
+    "field": "C",
+    "requested": "If I stay in my current role, though despite everyone saying I should have gone for it…",
+    "status": "pending"
+  },
+  {
+    "id": "challenging-role",
+    "field": "D",
+    "requested": "If I stay in my current role and see that leading would be harder than I thought…",
+    "status": "pending"
+  },
+  {
+    "id": "challenging-role",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely am I to be successful in this role?",
+    "status": "pending"
+  },
+  {
+    "id": "old-friend",
+    "field": "A",
+    "requested": "If I message and my old friend welcomes contact…",
+    "status": "applied"
+  },
+  {
+    "id": "old-friend",
+    "field": "B",
+    "requested": "If I message and my old friend does not respond warmly…",
+    "status": "applied"
+  },
+  {
+    "id": "old-friend",
+    "field": "C",
+    "requested": "If I stay silent, though thinking my old friend would welcome contact…",
+    "status": "pending"
+  },
+  {
+    "id": "old-friend",
+    "field": "D",
+    "requested": "If I stay silent thinking my friend would not respond warmly…",
+    "status": "pending"
+  },
+  {
+    "id": "perform-in-public",
+    "field": "A",
+    "requested": "If I perform and the evening goes well…",
+    "status": "applied"
+  },
+  {
+    "id": "perform-in-public",
+    "field": "B",
+    "requested": "If I perform and the evening is embarrassing…",
+    "status": "applied"
+  },
+  {
+    "id": "perform-in-public",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely is the evening to be a positve one for me?",
+    "status": "applied"
+  },
+  {
+    "id": "organise-gathering",
+    "field": "C",
+    "requested": "If I choose a quiet evening, though the gathering would have been enjoyable…",
+    "status": "applied"
+  },
+  {
+    "id": "organise-gathering",
+    "field": "D",
+    "requested": "If I choose a quiet evening and the its likely gathering would not have gone well…",
+    "status": "applied"
+  },
+  {
+    "id": "heathrow-third-runway",
+    "field": "story",
+    "requested": "Story  An investment committee compares committing to expansion with maintaining the existing business. This is the investor’s financial choice; permission to build is a separate public decision.",
+    "status": "applied"
+  },
+  {
+    "id": "heathrow-third-runway",
+    "field": "A",
+    "requested": "If we go ahead with the build, it is delivered as planned and  demand, grows as we hope it will…",
+    "status": "pending"
+  },
+  {
+    "id": "heathrow-third-runway",
+    "field": "B",
+    "requested": "If we go ahead but there are problems with delivery or the market is less than we hope…",
+    "status": "pending"
+  },
+  {
+    "id": "heathrow-third-runway",
+    "field": "C",
+    "requested": "If we keep the existing airport with existing runways, and the market does indeed expand.…",
+    "status": "pending"
+  },
+  {
+    "id": "heathrow-third-runway",
+    "field": "D",
+    "requested": "If we keep the existing airport and market growth is poor…",
+    "status": "pending"
+  },
+  {
+    "id": "nuclear-investment",
+    "field": "C",
+    "requested": "If we don’t build the new plant and demand for nuclear electricity is strong…",
+    "status": "pending"
+  },
+  {
+    "id": "nuclear-investment",
+    "field": "D",
+    "requested": "If we don’t build the new plant and it turns out it’s not really needed…",
+    "status": "pending"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "question",
+    "requested": "25 Should I pay for optional insurance such as and extended warranty on my phone?",
+    "status": "applied"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "A",
+    "requested": "If I buy the insurance and don’t need it…",
+    "status": "applied"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "B",
+    "requested": "If I buy cover, theres a problem and the insurance pays for it…",
+    "status": "applied"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "C",
+    "requested": "If I don’t buy the insurance and don’t need it…",
+    "status": "applied"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "D",
+    "requested": "If I skip cover and have to pay personally for a problem…",
+    "status": "applied"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "probabilityQuestion",
+    "requested": "Probability question  How likely am I to claim on the insurance over the two years?",
+    "status": "pending"
+  },
+  {
+    "id": "phone-warranty",
+    "field": "resourceQuestion",
+    "requested": "Resources question  How much money do I have before  in reserve before paying for the insurance?  £1,500",
+    "status": "applied"
+  }
+]

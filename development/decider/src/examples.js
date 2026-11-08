@@ -40,7 +40,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Spend money to make money? Here, the numbers back it. The Decider gives this campaign the green light.",
     "shortChange": "Lower confidence in demand from 50% to 30%, and the answer becomes No.",
-    "perspective": "Business owner"
+    "perspective": "Business owner",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "first-employee",
@@ -79,9 +82,12 @@ const items=[
     "expected": true,
     "importance": "Pretty important",
     "currency": "GBP",
-    "shortWhy": "Time to stop doing everything yourself? With this cash cushion, The Decider says the extra earning potential is worth the commitment.",
+    "shortWhy": "Time to stop doing everything yourself? With this cash cushion, The Decider says the extra earning potential is worth the risk.",
     "shortChange": "Reduce starting resources from £40,000 to £15,000, and the answer becomes No.",
-    "perspective": "Business owner"
+    "perspective": "Business owner",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "new-product",
@@ -91,7 +97,7 @@ const items=[
     "teaser": "A launch can have real upside and still need a convincing chance of demand.",
     "person": "Priya",
     "period": "The first six months",
-    "story": "Priya is considering a small product launch. She estimates the extra profit after development, stock and launch costs. If she holds back, a strong market could still lift sales of her existing products.",
+    "story": "Priya is considering a new product launch. She estimates the extra profit after development, stock and launch costs. If she holds back, a strong market could still lift sales of her existing products.",
     "situations": [
       "The market responds well",
       "The market response is disappointing"
@@ -122,7 +128,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "The launch could flop. But the upside, odds and cash cushion give it enough going for it. The Decider says launch.",
     "shortChange": "Reduce the chance of strong demand from 40% to 25%, and the answer becomes No.",
-    "perspective": "Business owner"
+    "perspective": "Business owner",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "large-order",
@@ -165,7 +174,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "A big order can be a big headache. One bad outcome eats too much of the business’s money. The Decider says pass.",
     "shortChange": "Reduce the possible loss from £18,000 to £8,000 through credible payment protection, and the answer becomes Yes.",
-    "perspective": "Business owner"
+    "perspective": "Business owner",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "equipment",
@@ -209,7 +221,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Shiny new kit needs to earn its keep. On these figures, it does. The Decider says invest.",
     "shortChange": "Add £5,000 to the purchase cost in both outcomes, and the answer becomes No.",
-    "perspective": "Business owner"
+    "perspective": "Business owner",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "training-course",
@@ -219,7 +234,7 @@ const items=[
     "teaser": "A useful qualification can still be a different decision for different budgets.",
     "person": "Noor",
     "period": "The next twelve months",
-    "story": "Noor is considering a course that might lead to better-paid work. The course fee is paid whether or not that opportunity arrives. Noor compares the net financial outcomes with not taking the course.",
+    "story": "Noor is considering a course that might lead to better-paid work. The course fee will have to be paid whether or not that opportunity arrives. Noor compares the net financial outcomes with not taking the course.",
     "situations": [
       "The better-paid opportunity arrives",
       "It does not arrive within the year"
@@ -250,7 +265,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "A course is an expense now and a possible boost later. With this financial cushion, The Decider backs the investment.",
     "shortChange": "Reduce available resources from £6,000 to £1,500, and the answer becomes No.",
-    "perspective": "Personal money choice"
+    "perspective": "Personal money choice",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "lottery-ticket",
@@ -294,7 +312,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "A massive jackpot. A microscopic chance. On money alone, The Decider says keep the ticket money.",
     "shortChange": "Value the enjoyment of playing at £3 and include it once in both buying outcomes: the broader-value answer becomes Yes. The financial answer stays No.",
-    "perspective": "Personal money choice"
+    "perspective": "Personal money choice",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "repair-or-replace",
@@ -337,7 +358,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Another repair bill—or a fresh start? Here, keeping the old car carries the nastier surprise. The Decider says replace it.",
     "shortChange": "If an inspection reduces the bad repair outcome to a £2,500 cost, keeping the car becomes preferable.",
-    "perspective": "Personal money choice"
+    "perspective": "Personal money choice",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "performance-bonus",
@@ -378,7 +402,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "That bonus looks tempting. The less exciting guaranteed income wins this round. The Decider says stick with it.",
     "shortChange": "Raise confidence in earning the bonus from 65% to 75%, and the answer becomes Yes.",
-    "perspective": "Personal money choice"
+    "perspective": "Personal money choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "refundable-booking",
@@ -419,7 +446,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Plans change. Losing the whole booking would sting. The Decider says the extra flexibility is worth paying for.",
     "shortChange": "Raise confidence that the trip will happen from 80% to 95%, and the answer becomes No.",
-    "perspective": "Personal money choice"
+    "perspective": "Personal money choice",
+    "navigationCategories": [
+      "buying"
+    ]
   },
   {
     "id": "ask-someone-out",
@@ -431,8 +461,8 @@ const items=[
     "period": "How the next few weeks might feel",
     "story": "Charlie would like to ask someone out. There may be mutual interest, or there may not. Charlie thinks about both possibilities—and about how it would feel to leave the question unasked.",
     "situations": [
-      "There is mutual interest",
-      "There is no mutual interest"
+      "They would say yes if asked",
+      "They would say no if asked"
     ],
     "pay": {
       "A": 12,
@@ -460,7 +490,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "A little awkwardness, a real chance of something good. With these feelings and odds, The Decider says ask.",
     "shortChange": "Lower confidence in the response from 50% to 25%, and the answer becomes No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "new-city",
@@ -503,7 +536,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "New city, new you? Maybe. But the unhappy version hits hard enough that The Decider says hold off for now.",
     "shortChange": "A short trial that makes the unhappy outcome less painful changes the answer to Yes.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "difficult-conversation",
@@ -546,7 +582,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Awkward now, or still on your mind next week? Both scenarios favour speaking up. The Decider says have the conversation.",
     "shortChange": "If a bad conversation would hurt much more than you first thought, the answer changes to No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "new-hobby",
@@ -589,13 +628,16 @@ const items=[
     "currency": "GBP",
     "shortWhy": "You might love it. You might not. The disappointment looks manageable, so The Decider says give it a go.",
     "shortChange": "If an unsuccessful attempt would feel much worse, the answer changes to No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "competition",
     "category": "happiness",
     "kind": "happiness",
-    "question": "Should I enter a competition?",
+    "question": "Should I enter a creative competition?",
     "teaser": "Winning is only part of what entering might mean to you.",
     "person": "Sky",
     "period": "The event and the week afterwards",
@@ -630,13 +672,16 @@ const items=[
     "currency": "GBP",
     "shortWhy": "You don’t have to be the favourite for entering to be worth it. The Decider says put your name down.",
     "shortChange": "Lower your confidence from 35% to 20%, and the answer becomes No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "challenging-role",
     "category": "happiness",
     "kind": "happiness",
-    "question": "Should I volunteer for a challenging role?",
+    "question": "Should I volunteer for a challenging leadership role in the community?",
     "teaser": "The stretch might be rewarding. How would it feel if it went wrong?",
     "person": "Fin",
     "period": "The first three months in the role",
@@ -671,7 +716,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "A stretch can be exciting as well as scary. With these odds and emotional strength, The Decider says take the role.",
     "shortChange": "Lower confidence in things working out from 60% to 50%, and the answer becomes No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "old-friend",
@@ -714,7 +762,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "One message could bring someone back into your life. Here, the possible happiness beats the awkwardness. The Decider says reach out.",
     "shortChange": "If an unhappy response would hurt much more, the answer changes to No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "perform-in-public",
@@ -755,7 +806,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Nerves don’t automatically mean no. The chance of a great feeling makes this worth a shot. The Decider says step up.",
     "shortChange": "Lower confidence in the performance going as hoped from 50% to 30%, and the answer becomes No.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "organise-gathering",
@@ -798,7 +852,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Hosting sounds fun—until it feels like a test of whether people like you. The Decider says take some pressure off first.",
     "shortChange": "Make it a smaller gathering with less emotional pressure, and the answer becomes Yes.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "solo-trip",
@@ -841,7 +898,10 @@ const items=[
     "currency": "GBP",
     "shortWhy": "Freedom sounds great. Feeling miserable far from home, less so. The Decider says make the first adventure a little easier.",
     "shortChange": "A shorter, easier first trip reduces the emotional downside enough to change the answer to Yes.",
-    "perspective": "Personal happiness choice"
+    "perspective": "Personal happiness choice",
+    "navigationCategories": [
+      "doing"
+    ]
   },
   {
     "id": "heathrow-third-runway",
@@ -851,7 +911,7 @@ const items=[
     "teaser": "A major opportunity. A major financial exposure.",
     "person": "The decision team",
     "period": "Long-term project outcomes, valued consistently in today’s money",
-    "story": "An investment committee compares committing to expansion with retaining the existing business. This is the investor’s financial choice; permission to build is a separate public decision.",
+    "story": "An investment committee compares committing to expansion with maintaining the existing business. This is the investor’s financial choice; permission to build is a separate public decision.",
     "situations": [
       "Demand, charges and delivery support the investment",
       "Commercial performance or delivery disappoints"
@@ -893,6 +953,9 @@ const items=[
         "label": "IAG-commissioned Oliver Wyman affordability analysis (on CAA website)",
         "url": "https://www.caa.co.uk/media/itmddfgj/20260311-oliver-wyman-report-heathrow-affordable-expansion.pdf"
       }
+    ],
+    "navigationCategories": [
+      "big"
     ]
   },
   {
@@ -936,7 +999,10 @@ const items=[
     "currency": "GBP",
     "perspective": "Investor decision: finance a power project",
     "basis": "A generic project example. All amounts, odds and resources are assumed; none describe a named nuclear scheme. Safety, waste, consent and construction liquidity require separate assessment.",
-    "sources": []
+    "sources": [],
+    "navigationCategories": [
+      "big"
+    ]
   },
   {
     "id": "stadium-funding",
@@ -981,7 +1047,10 @@ const items=[
     "currency": "GBP",
     "perspective": "Council decision: a financial contribution",
     "basis": "A generic council example with assumed numbers. The £100m represents an explicitly assumed risk-bearing financial base, not a real council’s cash or unrestricted reserves. Statutory duties, borrowing rules and service protection can prevent an investment regardless of this result.",
-    "sources": []
+    "sources": [],
+    "navigationCategories": [
+      "big"
+    ]
   },
   {
     "id": "flood-defences",
@@ -1028,13 +1097,16 @@ const items=[
     "scenarioLabels": [
       "Flood during the period",
       "No flood during the period"
+    ],
+    "navigationCategories": [
+      "big"
     ]
   },
   {
     "id": "phone-warranty",
     "category": "money",
     "kind": "money",
-    "question": "Should I pay for an extended warranty on my phone?",
+    "question": "Should I pay for optional insurance such as an extended warranty on my phone?",
     "teaser": "The phone is expensive. Does that make the extra cover worth it?",
     "person": "Alex",
     "period": "The two-year extended-cover period",
@@ -1070,7 +1142,10 @@ const items=[
     "importance": "Everyday",
     "currency": "GBP",
     "perspective": "Personal money choice",
-    "basis": "Prices, claim fees and probabilities are example inputs, not a named warranty offer or a reliability forecast. Count only the repair cost you would personally pay after any existing cover. Check which faults the extra policy actually covers."
+    "basis": "Prices, claim fees and probabilities are example inputs, not a named warranty offer or a reliability forecast. Count only the repair cost you would personally pay after any existing cover. Check which faults the extra policy actually covers.",
+    "navigationCategories": [
+      "buying"
+    ]
   }
 ];
 function stateFor(e,variation=false){

@@ -1,0 +1,482 @@
+{
+  "examples": [
+    {
+      "id": "advertising",
+      "pay": {
+        "A": 6000,
+        "B": -3000,
+        "C": 0,
+        "D": 0
+      },
+      "p": 50,
+      "resources": 25000,
+      "variant": {
+        "p": 30,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "first-employee",
+      "pay": {
+        "A": 15000,
+        "B": -12000,
+        "C": 4000,
+        "D": 0
+      },
+      "p": 65,
+      "resources": 40000,
+      "variant": {
+        "resources": 15000,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "new-product",
+      "pay": {
+        "A": 20000,
+        "B": -6000,
+        "C": 2000,
+        "D": 0
+      },
+      "p": 40,
+      "resources": 30000,
+      "variant": {
+        "p": 25,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "large-order",
+      "pay": {
+        "A": 12000,
+        "B": -18000,
+        "C": 2000,
+        "D": 2000
+      },
+      "p": 70,
+      "resources": 25000,
+      "variant": {
+        "pay": {
+          "B": -8000
+        },
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "equipment",
+      "pay": {
+        "A": 8000,
+        "B": -4000,
+        "C": 1500,
+        "D": -500
+      },
+      "p": 55,
+      "resources": 18000,
+      "variant": {
+        "pay": {
+          "A": 3000,
+          "B": -9000
+        },
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "training-course",
+      "pay": {
+        "A": 4000,
+        "B": -1200,
+        "C": 0,
+        "D": 0
+      },
+      "p": 45,
+      "resources": 6000,
+      "variant": {
+        "resources": 1500,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "lottery-ticket",
+      "pay": {
+        "A": 999998,
+        "B": -2,
+        "C": 0,
+        "D": 0
+      },
+      "p": 0.0001,
+      "resources": 5000,
+      "variant": {
+        "pay": {
+          "A": 1000001,
+          "B": 1
+        },
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "repair-or-replace",
+      "pay": {
+        "A": -1500,
+        "B": -3500,
+        "C": -800,
+        "D": -5000
+      },
+      "p": 70,
+      "resources": 10000,
+      "variant": {
+        "pay": {
+          "D": -2500
+        },
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "performance-bonus",
+      "pay": {
+        "A": 8000,
+        "B": -6000,
+        "C": 2000,
+        "D": 2000
+      },
+      "p": 65,
+      "resources": 15000,
+      "variant": {
+        "p": 75,
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "refundable-booking",
+      "pay": {
+        "A": -1100,
+        "B": -100,
+        "C": -1000,
+        "D": -1000
+      },
+      "p": 80,
+      "resources": 5000,
+      "variant": {
+        "p": 95,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "ask-someone-out",
+      "pay": {
+        "A": 12,
+        "B": -6,
+        "C": -3,
+        "D": 0
+      },
+      "p": 50,
+      "resources": 25,
+      "variant": {
+        "p": 25,
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "new-city",
+      "pay": {
+        "A": 22,
+        "B": -18,
+        "C": 2,
+        "D": 0
+      },
+      "p": 60,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -8
+        },
+        "expected": true
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Life changing"
+    },
+    {
+      "id": "difficult-conversation",
+      "pay": {
+        "A": 15,
+        "B": -8,
+        "C": -5,
+        "D": -10
+      },
+      "p": 60,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -22
+        },
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "new-hobby",
+      "pay": {
+        "A": 10,
+        "B": -3,
+        "C": 0,
+        "D": 0
+      },
+      "p": 60,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -12
+        },
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Everyday"
+    },
+    {
+      "id": "competition",
+      "pay": {
+        "A": 12,
+        "B": -5,
+        "C": -2,
+        "D": 0
+      },
+      "p": 35,
+      "resources": 25,
+      "variant": {
+        "p": 20,
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Everyday"
+    },
+    {
+      "id": "challenging-role",
+      "pay": {
+        "A": 18,
+        "B": -12,
+        "C": 2,
+        "D": 0
+      },
+      "p": 60,
+      "resources": 25,
+      "variant": {
+        "p": 50,
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "old-friend",
+      "pay": {
+        "A": 12,
+        "B": -4,
+        "C": -2,
+        "D": 0
+      },
+      "p": 45,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -16
+        },
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "perform-in-public",
+      "pay": {
+        "A": 18,
+        "B": -10,
+        "C": -4,
+        "D": 0
+      },
+      "p": 50,
+      "resources": 25,
+      "variant": {
+        "p": 30,
+        "expected": false
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "organise-gathering",
+      "pay": {
+        "A": 12,
+        "B": -20,
+        "C": 1,
+        "D": 0
+      },
+      "p": 65,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -6
+        },
+        "expected": true
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Everyday"
+    },
+    {
+      "id": "solo-trip",
+      "pay": {
+        "A": 20,
+        "B": -14,
+        "C": 2,
+        "D": 0
+      },
+      "p": 55,
+      "resources": 25,
+      "variant": {
+        "pay": {
+          "B": -6
+        },
+        "expected": true
+      },
+      "kind": "happiness",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "heathrow-third-runway",
+      "pay": {
+        "A": 20000000000,
+        "B": -20000000000,
+        "C": -5000000000,
+        "D": 0
+      },
+      "p": 60,
+      "resources": 30000000000,
+      "variant": {
+        "p": 65,
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "nuclear-investment",
+      "pay": {
+        "A": 600000000,
+        "B": -400000000,
+        "C": -250000000,
+        "D": -50000000
+      },
+      "p": 70,
+      "resources": 1000000000,
+      "variant": {
+        "p": 30,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "stadium-funding",
+      "pay": {
+        "A": 40000000,
+        "B": -70000000,
+        "C": -10000000,
+        "D": 0
+      },
+      "p": 60,
+      "resources": 100000000,
+      "variant": {
+        "pay": {
+          "B": -25000000
+        },
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "flood-defences",
+      "pay": {
+        "A": -10000000,
+        "B": -15000000,
+        "C": -60000000,
+        "D": 0
+      },
+      "p": 35,
+      "resources": 100000000,
+      "variant": {
+        "p": 5,
+        "expected": false
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Pretty important"
+    },
+    {
+      "id": "phone-warranty",
+      "pay": {
+        "A": -180,
+        "B": -230,
+        "C": 0,
+        "D": -900
+      },
+      "p": 90,
+      "resources": 1500,
+      "variant": {
+        "p": 70,
+        "expected": true
+      },
+      "kind": "money",
+      "currency": "GBP",
+      "importance": "Everyday"
+    }
+  ],
+  "hashes": {
+    "engine.js": "c4b87c8fefda12e019d782de35c92342a77345b57565847b8079e8974e0cf058",
+    "precision.js": "da96ebac7d6099e88cb1c50f9a4759b86034cae4246eb14a38d23bf1cdc94c48"
+  }
+}

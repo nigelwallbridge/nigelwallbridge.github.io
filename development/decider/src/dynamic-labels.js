@@ -3,24 +3,24 @@
 const configs={
   "advertising": {
     "go": "run the campaign",
-    "stay": "keep my current marketing plan",
+    "stay": "don’t buy the new advertising",
     "yes": "Run the campaign.",
     "no": "Keep the current plan.",
     "questions": {
-      "A": "If I run the campaign and demand is strong…",
-      "B": "If I run the campaign and demand is weak…",
+      "A": "If I run the advertising campaign and demand increases a lot…",
+      "B": "If I run the campaign and the response is weak…",
       "C": "If I keep the current plan, though the campaign would draw strong demand…",
       "D": "If I keep the current plan and the campaign would draw weak demand…"
     },
-    "simpleQuestion": "If I keep my current marketing plan…",
-    "probabilityQuestion": "How likely is a strong customer response if I run the campaign?",
+    "simpleQuestion": "If I don’t run the additional advertising campaign…",
+    "probabilityQuestion": "How likely is it that there will be a strong customer response if I run the campaign?",
     "event": "customers responding strongly",
     "scenarios": [
       "customers respond strongly",
       "customer demand disappoints"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money does my business have before this campaign?",
+    "resourceQuestion": "How much money does the business have in reserve before this campaign?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -48,23 +48,23 @@ const configs={
   "first-employee": {
     "go": "hire my first employee",
     "stay": "keep working solo",
-    "yes": "Make the hire.",
+    "yes": "Go ahead. Make the hire.",
     "no": "Stay solo for now.",
     "questions": {
-      "A": "If I hire and client demand stays strong…",
-      "B": "If I hire and client demand falls short…",
-      "C": "If I stay solo and client demand stays strong…",
+      "A": "If I hire someone and the increase in customer demand continues…",
+      "B": "If I hire and customer demand falls short…",
+      "C": "If I stay solo and customer demand stays strong…",
       "D": "If I stay solo and client demand falls short…"
     },
     "simpleQuestion": "If I keep working solo…",
     "probabilityQuestion": "How likely is client demand to stay strong?",
     "event": "client demand staying strong",
     "scenarios": [
-      "client demand stays strong",
-      "client demand falls short"
+      "customer demand stays strong",
+      "customer demand falls short"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money does my business have before hiring?",
+    "resourceQuestion": "How much money does my business have in reserve before hiring?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -95,20 +95,20 @@ const configs={
     "yes": "Launch the product.",
     "no": "Hold off on the launch.",
     "questions": {
-      "A": "If I launch and the market responds well…",
+      "A": "If I launch and the market responds well, the additional profit will be…",
       "B": "If I launch and the market response disappoints…",
       "C": "If I keep existing products, though the launch would go well…",
       "D": "If I keep existing products and the launch would disappoint…"
     },
     "simpleQuestion": "If I stick with my existing products…",
-    "probabilityQuestion": "How likely is a strong response if I launch the new product?",
+    "probabilityQuestion": "How likely is a good response if I launch the new product?",
     "event": "a strong market response",
     "scenarios": [
       "the market responds well",
       "the market response disappoints"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money does my business have before the launch?",
+    "resourceQuestion": "How much money does my business have in reserve before the launch?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -139,20 +139,20 @@ const configs={
     "yes": "Take the order.",
     "no": "Turn down this order.",
     "questions": {
-      "A": "If I accept and delivery and payment go smoothly…",
-      "B": "If I accept and delivery or payment goes wrong…",
+      "A": "If I accept the order and delivery and payment go smoothly…",
+      "B": "If I accept it and something, perhaps delivery or payment, goes wrong…",
       "C": "If I decline, though delivery and payment would go smoothly…",
       "D": "If I decline and delivery or payment would go wrong…"
     },
     "simpleQuestion": "If I turn down the order…",
-    "probabilityQuestion": "How likely are smooth delivery and full payment?",
+    "probabilityQuestion": "How likely is it that everything would go well with this large order?",
     "event": "smooth delivery and full payment",
     "scenarios": [
       "delivery and payment would go smoothly",
       "delivery or payment would go wrong"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money does my business have before taking the order?",
+    "resourceQuestion": "How much money does my business have in reserve before taking the order?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -183,10 +183,10 @@ const configs={
     "yes": "Buy the equipment.",
     "no": "Keep the existing equipment.",
     "questions": {
-      "A": "If I buy the equipment and demand justifies it…",
-      "B": "If I buy the equipment and demand stays weak…",
-      "C": "If I keep the old equipment and demand is strong…",
-      "D": "If I keep the old equipment and demand stays weak…"
+      "A": "If I buy the equipment and there is work for it…",
+      "B": "If I buy the equipment and there is insufficient demand for it…",
+      "C": "If I don’t buy new and demand is strong…",
+      "D": "If I don’t buy new and demand is weak…"
     },
     "simpleQuestion": "If I keep the old equipment…",
     "probabilityQuestion": "How likely is demand to justify the extra capacity?",
@@ -196,7 +196,7 @@ const configs={
       "demand stays weak"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money does my business have before buying the equipment?",
+    "resourceQuestion": "How much money does my business have in reserve before buying the equipment?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -227,13 +227,13 @@ const configs={
     "yes": "Take the course.",
     "no": "Skip this course.",
     "questions": {
-      "A": "If I take the course and the better-paid opportunity arrives…",
-      "B": "If I take the course and that opportunity does not arrive in time…",
+      "A": "If I take the course and it leads to a better paid job…",
+      "B": "If I take the course and a better paid job doesn’t arrive…",
       "C": "If I skip the course, though that opportunity would arrive…",
-      "D": "If I skip the course and that opportunity would not arrive in time…"
+      "D": "If I skip the course and find that those better paid jobs aren’t really there…"
     },
     "simpleQuestion": "If I skip the course…",
-    "probabilityQuestion": "How likely is the better-paid opportunity within the year?",
+    "probabilityQuestion": "How likely is the better-paid job within the year?",
     "event": "the better-paid opportunity arriving within the year",
     "scenarios": [
       "the better-paid opportunity arrives",
@@ -272,9 +272,9 @@ const configs={
     "no": "Keep the ticket money.",
     "questions": {
       "A": "If I buy a ticket and my numbers win…",
-      "B": "If I buy a ticket and my numbers do not win…",
-      "C": "If I skip the ticket and my numbers win…",
-      "D": "If I skip the ticket and my numbers do not win…"
+      "B": "If I buy a ticket and my numbers don’t win…",
+      "C": "If I skip the ticket and my favourite lucky numbers win…",
+      "D": "If I skip the ticket and my numbers don’t win…"
     },
     "simpleQuestion": "If I keep my ticket money…",
     "probabilityQuestion": "How likely are my chosen numbers to win?",
@@ -316,12 +316,12 @@ const configs={
     "no": "Repair the current car.",
     "questions": {
       "A": "If I replace my car and motoring goes smoothly…",
-      "B": "If I replace my car and expensive problems arise…",
-      "C": "If I repair my car and motoring goes smoothly…",
-      "D": "If I repair my car and expensive problems arise…"
+      "B": "If I replace my car and expensive problems still occur…",
+      "C": "If I repair my old car and motoring goes smoothly…",
+      "D": "If I repair my old car and expensive problems occur…"
     },
     "simpleQuestion": "If I repair my current car…",
-    "probabilityQuestion": "How likely is a smooth year of motoring?",
+    "probabilityQuestion": "How likely is a smooth year of motoring without serious problems?",
     "event": "a smooth year of motoring",
     "scenarios": [
       "the year’s motoring goes smoothly",
@@ -355,16 +355,16 @@ const configs={
   },
   "performance-bonus": {
     "go": "take the bonus-based job",
-    "stay": "stay with the guaranteed pay rise",
+    "stay": "stay in my guaranteed-pay job",
     "yes": "Take the bonus-based job.",
-    "no": "Take the guaranteed pay rise.",
+    "no": "Stay in the guaranteed-pay job.",
     "questions": {
       "A": "If I take the bonus job and earn the hoped-for bonus…",
       "B": "If I take the bonus job and performance falls short…",
-      "C": "If I choose guaranteed pay, though I would earn the bonus…",
-      "D": "If I choose guaranteed pay and I would miss the bonus…"
+      "C": "If I stay in my guaranteed-pay job, though I would earn the bonus…",
+      "D": "If I stay in my guaranteed-pay job and I would miss the bonus…"
     },
-    "simpleQuestion": "If I stay with the guaranteed pay rise…",
+    "simpleQuestion": "If I stay in my guaranteed-pay job…",
     "probabilityQuestion": "How likely am I to earn the hoped-for bonus if I take that job?",
     "event": "earning the hoped-for bonus",
     "scenarios": [
@@ -372,7 +372,7 @@ const configs={
       "performance falls short"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money do I have before this job decision?",
+    "resourceQuestion": "How much money do I have in reserve before this job decision?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -447,17 +447,17 @@ const configs={
     "yes": "Ask them out.",
     "no": "Leave it for now.",
     "questions": {
-      "A": "If I ask them out and the interest is mutual…",
-      "B": "If I ask them out and the interest is not mutual…",
-      "C": "If I do not ask and the interest is mutual…",
-      "D": "If I do not ask and the interest is not mutual…"
+      "A": "If I ask them out and they say yes…",
+      "B": "If I ask them out and they say no…",
+      "C": "If I don’t ask but later find out that they would have said yes if I had asked…",
+      "D": "If I don’t ask and find out that they would have said no anyway…"
     },
     "simpleQuestion": "If I leave it unasked…",
-    "probabilityQuestion": "How likely is mutual interest?",
-    "event": "mutual interest",
+    "probabilityQuestion": "How likely are they to say yes?",
+    "event": "them saying yes if asked",
     "scenarios": [
-      "there is mutual interest",
-      "there is no mutual interest"
+      "they would say yes",
+      "they would say no"
     ],
     "probabilityScenario": 0,
     "resourceQuestion": "How much emotional strength do I have for this right now?",
@@ -491,8 +491,8 @@ const configs={
     "actor": "I",
     "displayPeriod": "Next few weeks",
     "probabilityLabels": [
-      "Mutual interest",
-      "No mutual interest"
+      "They would say yes",
+      "They would say no"
     ]
   },
   "new-city": {
@@ -501,10 +501,10 @@ const configs={
     "yes": "Make the move.",
     "no": "Stay where you are for now.",
     "questions": {
-      "A": "If I move and life there suits me…",
+      "A": "If I move and life in the new place really suits me…",
       "B": "If I move and life there feels wrong…",
-      "C": "If I stay, though life there would suit me…",
-      "D": "If I stay and life there would not suit me…"
+      "C": "If I stay here, even though life in the new place would have suited me…",
+      "D": "If I stay here and realise that life there would not suit me…"
     },
     "simpleQuestion": "If I stay where I am…",
     "probabilityQuestion": "How likely is life in the new city to suit me?",
@@ -555,17 +555,17 @@ const configs={
     "yes": "Have the conversation.",
     "no": "Leave the subject for now.",
     "questions": {
-      "A": "If I speak up and my friend is receptive…",
-      "B": "If I speak up and my friend is not receptive…",
+      "A": "If I speak up and my friend is open to a discussion…",
+      "B": "If I speak up and my friend is hostile or hurt…",
       "C": "If I stay quiet, though my friend would be receptive…",
       "D": "If I stay quiet and my friend would not be receptive…"
     },
     "simpleQuestion": "If I leave the subject alone…",
     "probabilityQuestion": "How likely is my friend to be receptive?",
-    "event": "my friend being receptive",
+    "event": "my friend being open to discussion",
     "scenarios": [
-      "my friend would be receptive",
-      "my friend would not be receptive"
+      "my friend is open to discussion",
+      "my friend is hostile or hurt"
     ],
     "probabilityScenario": 0,
     "resourceQuestion": "How much emotional strength do I have for this conversation?",
@@ -599,8 +599,8 @@ const configs={
     "actor": "I",
     "displayPeriod": "Following month",
     "probabilityLabels": [
-      "Friend receptive",
-      "Friend not receptive"
+      "Open to discussion",
+      "Hostile or hurt"
     ]
   },
   "new-hobby": {
@@ -609,17 +609,17 @@ const configs={
     "yes": "Give the class a go.",
     "no": "Give this class a miss.",
     "questions": {
-      "A": "If I try the class and it suits me…",
-      "B": "If I try the class and it does not suit me…",
+      "A": "If I try the class and I love it…",
+      "B": "If I try the class and it’s not for me…",
       "C": "If I skip the class, though it would suit me…",
-      "D": "If I skip the class and it would not suit me…"
+      "D": "If I don’t try and it turns out it’s not my kind of thing…"
     },
     "simpleQuestion": "If I give the class a miss…",
-    "probabilityQuestion": "How likely is this class to be a good fit for me?",
+    "probabilityQuestion": "How likely is this class to be good for me?",
     "event": "the class being a good fit",
     "scenarios": [
-      "the class would be a good fit",
-      "the class would not be a good fit"
+      "the class is right for me",
+      "the class is not for me"
     ],
     "probabilityScenario": 0,
     "resourceQuestion": "How much emotional strength do I have before trying something new?",
@@ -771,8 +771,8 @@ const configs={
     "yes": "Send the message.",
     "no": "Leave the message for now.",
     "questions": {
-      "A": "If I message and my friend welcomes contact…",
-      "B": "If I message and my friend does not respond warmly…",
+      "A": "If I message and my old friend welcomes contact…",
+      "B": "If I message and my old friend does not respond warmly…",
       "C": "If I stay silent, though my friend would welcome contact…",
       "D": "If I stay silent and my friend would not respond warmly…"
     },
@@ -825,17 +825,17 @@ const configs={
     "yes": "Step up and perform.",
     "no": "Skip this performance.",
     "questions": {
-      "A": "If I perform and the evening feels encouraging…",
-      "B": "If I perform and the evening feels uncomfortable…",
+      "A": "If I perform and the evening goes well…",
+      "B": "If I perform and the evening is embarrassing…",
       "C": "If I skip performing, though the evening would feel encouraging…",
       "D": "If I skip performing and the evening would feel uncomfortable…"
     },
     "simpleQuestion": "If I skip the performance…",
-    "probabilityQuestion": "How likely is the evening to feel encouraging?",
-    "event": "an encouraging evening",
+    "probabilityQuestion": "How likely is the evening to be a positive one for me?",
+    "event": "the evening going well for me",
     "scenarios": [
-      "the evening would feel encouraging",
-      "the evening would feel uncomfortable"
+      "the evening goes well for me",
+      "the evening is embarrassing"
     ],
     "probabilityScenario": 0,
     "resourceQuestion": "How much emotional strength do I have before performing?",
@@ -869,8 +869,8 @@ const configs={
     "actor": "I",
     "displayPeriod": "Performance and following week",
     "probabilityLabels": [
-      "Encouraging evening",
-      "Uncomfortable evening"
+      "Evening goes well",
+      "Embarrassing evening"
     ]
   },
   "organise-gathering": {
@@ -881,8 +881,8 @@ const configs={
     "questions": {
       "A": "If I host and the gathering is enjoyable…",
       "B": "If I host and the gathering disappoints…",
-      "C": "If I choose a quiet evening, though the gathering would be enjoyable…",
-      "D": "If I choose a quiet evening and the gathering would disappoint…"
+      "C": "If I choose a quiet evening, though the gathering would have been enjoyable…",
+      "D": "If I choose a quiet evening and the its likely gathering would not have gone well…"
     },
     "simpleQuestion": "If I have a quiet evening instead…",
     "probabilityQuestion": "How likely is the gathering to be enjoyable?",
@@ -1163,10 +1163,10 @@ const configs={
     "yes": "Buy the extra cover.",
     "no": "Skip the extra cover.",
     "questions": {
-      "A": "If I buy cover and there’s no covered fault…",
-      "B": "If I buy cover and there’s a covered fault…",
-      "C": "If I skip cover and there’s no covered fault…",
-      "D": "If I skip cover and there’s a covered fault…"
+      "A": "If I buy the insurance and don’t need it…",
+      "B": "If I buy cover, there’s a problem and the insurance pays for it…",
+      "C": "If I don’t buy the insurance and don’t need it…",
+      "D": "If I skip cover and have to pay personally for a problem…"
     },
     "simpleQuestion": "If I skip the extended cover…",
     "probabilityQuestion": "How likely is my phone to avoid a covered fault over the two years?",
@@ -1176,7 +1176,7 @@ const configs={
       "my phone develops a covered fault in that period"
     ],
     "probabilityScenario": 0,
-    "resourceQuestion": "How much money do I have before any cover or repair bills?",
+    "resourceQuestion": "How much money do I have in reserve before paying for the insurance?",
     "resourceShort": "Starting financial resources",
     "choiceFor": {
       "A": "go",
@@ -1213,7 +1213,21 @@ function summary(d,r){const c=forState(d);if(!c)return null;
  if(stayBad)return 'One possible outcome if you '+c.stay+' would use up the '+(d.kind==='money'?'starting financial resources':'emotional strength')+' you entered. The Decider favours the alternative: '+c.go+'.';
  if(!r.comparisonResolved)return 'The answers for “'+c.go+'” and “'+c.stay+'” are too close for a reliable numerical comparison.';
  if(r.comparison.exactTie)return 'Your answers leave “'+c.go+'” and “'+c.stay+'” evenly balanced.';
- return 'The Decider favours “'+selected+'”. '+(d.kind==='money'?'The possible gains and costs, their chances and the financial resources you entered favour this choice.':'How each outcome could feel, its chances and your emotional strength favour this choice.');
+ const probability=new Intl.NumberFormat('en-GB',{maximumFractionDigits:7}).format(d.p)+'%';
+ const chance='You put “'+c.probabilityLabels[0]+'” at '+probability+'. ';
+ const possible=d.p===0?[1]:d.p===100?[0]:[0,1];
+ const go=[d.pay.A,d.pay.B],stay=[d.pay.C,d.pay.D];
+ const selectedValues=r.goForIt?go:stay,otherValues=r.goForIt?stay:go;
+ const dominates=possible.every(i=>selectedValues[i]>=otherValues[i]);
+ if(dominates)return 'The Decider favours “'+selected+'”. Its consequences are at least as good in every scenario you give a chance of happening. Changing your starting resources alone will not reverse that ordering.';
+ if(d.kind==='happiness')return 'The Decider favours “'+selected+'”. '+chance+'The comparison weighs the possible happiness and unhappiness against your emotional strength. A difficult outcome weighs more heavily when you have less to draw on.';
+ const amount=n=>new Intl.NumberFormat('en-GB',{style:'currency',currency:d.currency,maximumFractionDigits:2}).format(Math.abs(n));
+ const outcome=n=>n===0?'no change':n<0?'a loss of '+amount(n):'a gain of '+amount(n);
+ const low=Math.min(...possible.map(i=>selectedValues[i])),high=Math.max(...possible.map(i=>selectedValues[i]));
+ const averageGo=d.p/100*d.pay.A+(1-d.p/100)*d.pay.B;
+ const averageStay=d.p/100*d.pay.C+(1-d.p/100)*d.pay.D;
+ const averageDisagrees=r.goForIt?averageGo<averageStay:averageStay<averageGo;
+ return 'The Decider favours “'+selected+'”. '+chance+'This choice ranges from '+outcome(low)+' to '+outcome(high)+', against '+amount(d.resources)+' of starting resources. '+(averageDisagrees?'The other choice has a higher average money outcome, but the significance of losses relative to your resources reverses the preference under this rule.':'The rule weighs those gains and losses in proportion to your starting resources.');
 }
 const api={configs,forState,question,headline,summary};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.DeciderLabels=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
