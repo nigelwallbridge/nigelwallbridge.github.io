@@ -40,7 +40,7 @@ function paintOpening(){
  const copy={
  guaranteed:['Take the guaranteed £50,000.','With this starting amount, £50,000 gives your financial position a bigger lift than taking the chance does under this rule. The possibility of receiving nothing carries more weight when you start with less.'],
  chance:['Take the 50% chance of £1 million.','You have more resources to draw on. That makes receiving nothing less significant relative to your starting position, and the possible £1 million comes out ahead under the same rule.'],
- equal:['Both choices are equivalent.','At exactly £25,000 divided by 9 of starting resources, the alternatives have equal expected logarithmic utility. There is no strict preference under the model.'],
+ equal:['Both choices are equivalent.','At this exact starting amount, both choices have the same score under the mathematical rule. Either choice is equivalent in this comparison.'],
  unresolved:['The choices are too close to separate reliably.','Try a slightly different starting amount to explore either side of the balance.']
  }[answer.recommendation];
  result.innerHTML='<strong>'+copy[0]+'</strong><p>'+copy[1]+'</p>';
